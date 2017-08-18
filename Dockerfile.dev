@@ -9,4 +9,5 @@ ENV APPSERVER_CFG ${APPSERVER}/config
 COPY ./src/ ${APPSERVER}
 COPY ./runtime/config/dev/ ${APPSERVER_CFG}
 
+# Run application
 RUN python ${APPSERVER}/main.py
