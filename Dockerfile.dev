@@ -1,0 +1,12 @@
+# Create container based on Python image
+FROM python:2
+
+# Define environment variables
+ENV APPSERVER /appserver
+ENV APPSERVER_CFG ${APPSERVER}/config
+
+# Copy required files
+COPY ./src/ ${APPSERVER}
+COPY ./runtime/config/dev/ ${APPSERVER_CFG}
+
+RUN python ${APPSERVER}/main.py

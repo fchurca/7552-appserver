@@ -1,2 +1,4 @@
-def hello_world():
-    print "Hello, world!"
+class Server:
+    
+    def __init__(self):
+        print "Hello, world!"
