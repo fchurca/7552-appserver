@@ -1,13 +1,24 @@
 # Python Application Server
 
+## Build Docker Image
+From the root of the project, where the build scripts are located, execute:
+```
+appserver$ ./appserver.build.sh
+```
+Depending on how Docker was installed, this may require root privileges.
+
 ## Deploy Container for Local Development
 
-From the root of the project directory, execute
+First create a Docker network for Mongo and server containers:
 ```
-appserver$ docker build --build-arg MONGO=true -t fiuba/appserver:dev .
+appserver$ docker network create taller
 ```
-Since Docker will install Python environment and MongoDB, the first build will most likely take a while.
-After the build is done, launch a container as follows:
+
+Launch now a MongoDB container:
 ```
-appserver$ docker run -p 8080:8080 -it fiuba/appserver:dev
+appserver$ ./mongo.run.sh
+```
+After the MongoDB is up, run:
+```
+appserver$ ./appserver.run.sh
 ```
