@@ -25,8 +25,7 @@ EXPOSE 8080
 ARG ENV=dev
 
 # Copy source and runtime files to container
-COPY ./src/ ${APPSERVER}
 COPY ./runtime/config/${ENV}/ ${APPSERVER_CFG}
 
 # Execute application
-CMD ["gunicorn", "--bind=0.0.0.0:8080", "--workers=4", "main:app"]
+CMD ["gunicorn", "--bind=0.0.0.0:8080", "--workers=4", "--reload", "main:app"]

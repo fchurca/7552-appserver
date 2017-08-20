@@ -22,3 +22,10 @@ After Mongo is up, run in another terminal:
 ```
 appserver$ ./appserver.run.sh
 ```
+The script launches the image fiuba/appserver:dev inside a container. The container is configured as follows:
+
+* Port 8080 of the container is mapped to port 8080 of the host.
+
+* Container is placed inside network `taller`, with name `appserver.taller`.
+
+* The project's source code directory in the host is mapped to the directory where gunicorn looks for the application scripts. Since gunicorn is executed with live reload, local live edits to the application code will be instantly reloaded by gunicorn without having to build the image and reload the container once again.
