@@ -5,7 +5,7 @@ From the root of the project, where the build scripts are located, execute:
 ```
 appserver$ ./appserver.build.sh
 ```
-Depending on how Docker was installed, this may require root privileges.
+This script builds a Docker image from the Dockerfile in the root of the project's tree. The image will be called fiuba/appserver:dev, and this is the name that the execution scripts will later use.
 
 ## Deploy Container for Local Development
 
@@ -18,7 +18,7 @@ Launch now a MongoDB container:
 ```
 appserver$ ./mongo.run.sh
 ```
-After the MongoDB is up, run:
+After Mongo is up, run in another terminal:
 ```
 appserver$ ./appserver.run.sh
 ```

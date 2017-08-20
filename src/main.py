@@ -10,6 +10,3 @@ def greet(username):
     users = db['users']
     users.insert_one({ 'username' : username })
     return "Hello, " + users.find_one({ 'username' : username })['username']
-
-if __name__ == '__main__':
-    pass
