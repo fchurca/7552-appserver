@@ -1,4 +1,5 @@
 import appconfig
+import pymongo
 
 class _MongoConfig(object):
     
@@ -30,5 +31,11 @@ class _MongoConfig(object):
     
     def get_database_name(self):
         return self._database_name
+    
+    def get_database_from(self, connection):
+        return connection[self.get_database_name()]
+    
+    def get_connection(self):
+        return pymongo.MongoClient(self.get_connection_string())
     
 MONGO_CONFIG = _MongoConfig()
