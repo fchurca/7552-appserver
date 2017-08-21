@@ -7,7 +7,7 @@ ENV APPSERVER /appserver
 ENV APPSERVER_CFG /appconfig
 
 # Install Python environment
-RUN apt-get update && apt-get install -y python python-pip
+RUN apt-get update && apt-get install -y python3 python3-pip
 
 # Copy requirements.txt to some temporary location
 COPY ./requirements.txt ${INSTALL}
