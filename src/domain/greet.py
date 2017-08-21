@@ -1,7 +1,7 @@
-from persistence.mongodb.user import UserRepository
+from persistence.mongodb.test import TestRepository
 
 class GreetCase(object):
     
     def execute(self, name):
-        UserRepository().save({ 'username' : name })
+        TestRepository().retrieve_test_data()
         return name
