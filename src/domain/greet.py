@@ -3,5 +3,5 @@ from persistence.mongodb.test import TestRepository
 class GreetCase(object):
     
     def execute(self, name):
-        TestRepository().retrieve_test_data()
-        return name
+        testdata = TestRepository().retrieve_test_data()
+        return name + ' (loaded ' + testdata + ' from the database)' 
