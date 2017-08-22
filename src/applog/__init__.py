@@ -8,7 +8,7 @@ class LoggerFactory(object):
     
     _LEVEL = _CONFIG.get('Logging', 'level', 'INFO')
     
-    _FORMAT = '[%(asctime)s] [%(process)d] [%(levelname)s] %(name)s - %(message)s'
+    _FORMAT = _CONFIG.get('Logging', 'format' , '')
     
     logging.basicConfig(level=_LEVEL, format=_FORMAT)
     
