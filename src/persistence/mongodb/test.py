@@ -11,4 +11,4 @@ class TestRepository(object):
         test_data = db[TestRepository._COLLECTION].find_one()
         
         cn.close()
-        return test_data.get('testdata') if test_data else None
+        return test_data.get('testdata') if test_data else 'not_found'
