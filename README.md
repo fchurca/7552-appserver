@@ -1,5 +1,7 @@
 # Python Application Server
 
+[![Build Status](https://travis-ci.org/adrian-mb/python-appserver.svg?branch=master)](https://travis-ci.org/adrian-mb/python-appserver)
+
 ## Build Docker Image
 From the root of the project, where the build scripts are located, execute:
 ```
