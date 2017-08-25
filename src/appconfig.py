@@ -16,5 +16,5 @@ class _AppServerConfiguration(object):
 
     def get_file(self, filename):
         return self._config_dir.get_file(filename)
-    
+
 APP_CONFIG = _AppServerConfiguration()

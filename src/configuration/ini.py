@@ -1,10 +1,10 @@
-import ConfigParser
+import configparser
 import os
 
 class IniFile(object):
 
     def __init__(self, path):
-        self.config = ConfigParser.ConfigParser()
+        self.config = configparser.ConfigParser()
         self.config.read(path)
         
     def get(self, section, key, default_value):
