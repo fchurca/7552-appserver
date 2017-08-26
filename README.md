@@ -51,3 +51,22 @@ uri=<connection string>
 database=db
 ```
 For security reasons, however, this may not be desirable.
+
+## Building Redistributable Package
+
+First install Python dependency setuptools:
+```
+appserver$ pip install setuptools
+```
+Then execute from the root of the project directory
+```
+appserver$ python setup.py sdist
+```
+This should generate a redistributable archive file under a newly created dist directory. To install the package, execute
+```
+$ pip install <path to generated archive file>
+```
+Application server can then be executed using gunicorn:
+```
+$ gunicorn --workers 4 appserver:app
+```
