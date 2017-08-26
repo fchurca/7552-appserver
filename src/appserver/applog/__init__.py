@@ -1,6 +1,8 @@
-import appconfig
+from appserver import appconfig
+
 import logging
 import sys
+
 
 class LoggerFactory(object):
     

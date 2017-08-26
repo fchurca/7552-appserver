@@ -1,5 +1,5 @@
-import configuration.envar
-import configuration.ini
+from appserver.configuration import envar
+from appserver.configuration import ini
 
 class _AppServerConfiguration(object):
     
@@ -7,11 +7,11 @@ class _AppServerConfiguration(object):
     
     def __init__(self):
         config_path = self.get_configuration_path()
-        self._config_dir = configuration.ini.ConfigurationDir(config_path)
+        self._config_dir = ini.ConfigurationDir(config_path)
         
     def get_configuration_path(self):
         var_name = _AppServerConfiguration.APPSERVER_CFG
-        var = configuration.envar.EnvironmentVariable(var_name)
+        var = envar.EnvironmentVariable(var_name)
         return var.get_value()
 
     def get_file(self, filename):

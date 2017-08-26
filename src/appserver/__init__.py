@@ -1,6 +1,6 @@
 import flask
 
-from presentation.greet import GreetController
+from appserver.presentation.greet import GreetController
 
 app = flask.Flask(__name__)
 

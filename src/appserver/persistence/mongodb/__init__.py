@@ -1,7 +1,8 @@
-import appconfig
+from appserver import appconfig
+from appserver.configuration.envar import EnvironmentVariable
+
 import pymongo
 
-from configuration.envar import EnvironmentVariable
 
 class _MongoConfig(object):
     
