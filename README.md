@@ -62,9 +62,13 @@ Then execute from the root of the project directory
 ```
 appserver$ python setup.py sdist
 ```
-This should generate a redistributable archive file under a newly created dist directory. To install the package, execute
+This should generate a redistributable archive file under a newly created dist directory. 
+
+## Installing and Executing Redistributable Package
+To install the package, execute
 ```
-$ pip install <path to generated archive file>
+$ pip install gunicorn
+$ pip install <path to archive file>
 ```
 Application server can then be executed using gunicorn:
 ```
