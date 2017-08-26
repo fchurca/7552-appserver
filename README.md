@@ -67,10 +67,10 @@ This should generate a redistributable archive file under a newly created dist d
 ## Installing and Executing Redistributable Package
 To install the package, execute
 ```
-$ pip install gunicorn
 $ pip install <path to archive file>
 ```
 Application server can then be executed using gunicorn:
 ```
+$ pip install gunicorn
 $ gunicorn --workers 4 appserver:app
 ```
