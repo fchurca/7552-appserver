@@ -77,7 +77,7 @@ $ gunicorn --workers 4 appserver:app
 
 ## Generating Doxygen Documentation
 ```
-appserver$ apt-get install doxygen
+appserver$ apt-get install doxygen graphviz
 appserver$ doxygen
 ```
 HTML documentation will be placed inside the docs/generated directory.
