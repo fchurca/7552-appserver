@@ -10,9 +10,11 @@ python:
 install: 
   - pip install -r requirements.txt
   - pip install coveralls
+  - pip install setuptools
 
 script:
-  ./appserver.test.sh
+  - ./appserver.test.sh
+  - python setup.py sdist
 
 after_success:
   coveralls
