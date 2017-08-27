@@ -3,4 +3,4 @@
 .project
 .pydevproject
 *.pyc
-docs/generated/*
+docs/generated/html/*
