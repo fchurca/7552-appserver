@@ -74,3 +74,10 @@ Application server can then be executed using gunicorn:
 $ pip install gunicorn
 $ gunicorn --workers 4 appserver:app
 ```
+
+## Generating Doxygen Documentation
+```
+appserver$ apt-get install doxygen
+appserver$ doxygen
+```
+HTML documentation will be placed inside the docs/generated directory.
