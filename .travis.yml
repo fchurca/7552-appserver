@@ -1,11 +1,18 @@
-language: python
+language:
+  python
 
 notifications:
   email: false
 
 python:
-  - "3.6"
+  - 3.6
 
-install: "pip install -r requirements.txt"
+install: 
+  - pip install -r requirements.txt
+  - pip install coveralls
 
-script: ./appserver.test.sh
+script:
+  ./appserver.test.sh
+
+after_success:
+  coveralls
