@@ -1,6 +1,10 @@
 # Python Application Server
 
-[![Build Status](https://travis-ci.org/adrian-mb/python-appserver.svg?branch=master)](https://travis-ci.org/adrian-mb/python-appserver) [![Coverage Status](https://coveralls.io/repos/github/adrian-mb/python-appserver/badge.svg)](https://coveralls.io/github/adrian-mb/python-appserver)
+
+| Environment | Build | Coverage|
+|--------|-------|---------|
+| Master | | |
+| [Stage](https://github.com/adrian-mb/python-appserver) | [![Build Status](https://travis-ci.org/adrian-mb/python-appserver.svg?branch=master)](https://travis-ci.org/adrian-mb/python-appserver) | [![Coverage Status](https://coveralls.io/repos/github/adrian-mb/python-appserver/badge.svg)](https://coveralls.io/github/adrian-mb/python-appserver) |
 
 ## Building Docker Image
 From the root of the project, where the build scripts are located, execute:
