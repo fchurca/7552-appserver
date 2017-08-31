@@ -1,4 +1,6 @@
+.settings
 .coverage
 .project
 .pydevproject
 *.pyc
+docs/generated/html/*

@@ -1,6 +1,6 @@
 # Python Application Server
 
-[![Build Status](https://travis-ci.org/adrian-mb/python-appserver.svg?branch=master)](https://travis-ci.org/adrian-mb/python-appserver)
+[![Build Status](https://travis-ci.org/adrian-mb/python-appserver.svg?branch=master)](https://travis-ci.org/adrian-mb/python-appserver) [![Coverage Status](https://coveralls.io/repos/github/adrian-mb/python-appserver/badge.svg)](https://coveralls.io/github/adrian-mb/python-appserver)
 
 ## Building Docker Image
 From the root of the project, where the build scripts are located, execute:
@@ -51,3 +51,33 @@ uri=<connection string>
 database=db
 ```
 For security reasons, however, this may not be desirable.
+
+## Building Redistributable Package
+
+First install Python dependency setuptools:
+```
+appserver$ pip install setuptools
+```
+Then execute from the root of the project directory
+```
+appserver$ python setup.py sdist
+```
+This should generate a redistributable archive file under a newly created dist directory. 
+
+## Installing and Executing Redistributable Package
+To install the package, execute
+```
+$ pip install <path to archive file>
+```
+Application server can then be executed using gunicorn:
+```
+$ pip install gunicorn
+$ gunicorn --workers 4 appserver:app
+```
+
+## Generating Doxygen Documentation
+```
+appserver$ apt-get install doxygen graphviz
+appserver$ doxygen
+```
+HTML documentation will be placed inside the docs/generated directory.

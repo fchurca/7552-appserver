@@ -1,6 +1,6 @@
 import unittest
 
-from configuration.envar import EnvironmentVariable 
+from appserver.configuration.envar import EnvironmentVariable 
 
 class TestEnvironmentVariable(unittest.TestCase):
     

@@ -1,4 +1,4 @@
-from persistence.mongodb import MONGO_CONFIG
+from appserver.persistence.mongodb import MONGO_CONFIG
 
 class UserRepository(object):
     

@@ -1,5 +1,5 @@
-from persistence.mongodb.test import TestRepository
-from applog import LoggerFactory
+from appserver.persistence.mongodb.test import TestRepository
+from appserver.applog import LoggerFactory
 
 class GreetCase(object):
     
