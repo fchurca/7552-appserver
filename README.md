@@ -6,7 +6,7 @@
 
 | Environment | Build | Coverage|
 |--------|-------|---------|
-| [Master] | [![Build Status](https://travis-ci.org/fchurca/7552-appserver.svg?branch=master)](https://travis-ci.org/fchurca/7552-appserver)| [![Coverage Status](https://coveralls.io/repos/github/fchurca/7552-appserver/badge.svg)](https://coveralls.io/github/fchurca/7552-appserver)|
+| [Master](https://github.com/fchurca/7552-appserver) | [![Build Status](https://travis-ci.org/fchurca/7552-appserver.svg?branch=master)](https://travis-ci.org/fchurca/7552-appserver)| [![Coverage Status](https://coveralls.io/repos/github/fchurca/7552-appserver/badge.svg)](https://coveralls.io/github/fchurca/7552-appserver)|
 | [Stage](https://github.com/adrian-mb/python-appserver) | [![Build Status](https://travis-ci.org/adrian-mb/python-appserver.svg?branch=master)](https://travis-ci.org/adrian-mb/python-appserver) | [![Coverage Status](https://coveralls.io/repos/github/adrian-mb/python-appserver/badge.svg)](https://coveralls.io/github/adrian-mb/python-appserver) |
 
 ## Dependencies
