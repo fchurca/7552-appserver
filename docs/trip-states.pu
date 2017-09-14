@@ -1,0 +1,13 @@
+@startuml
+state Active {
+	Pending --> Accepted : /trips:PATCH{tripId,state:accept}
+	Accepted --> Waiting : /trips:PATCH{tripId,state:waiting}
+	Waiting --> Underway : /trips:PATCH{tripId,state:waiting}
+	Accepted --> Accepted : /trips:POST{tripId,message}
+	Waiting --> Waiting : /trips:POST{tripId,message}
+}
+[*] --> Pending : /trips:PUT
+Underway --> Finished : /trips/current:PATCH{state:finished}
+Active --> Cancelled : /trips/current:PATCH{state:cancelled}
+@enduml
+

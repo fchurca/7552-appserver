@@ -1,0 +1,7 @@
+@startuml
+[*] --> Active : /profile:PUT
+Active --> Active : /profile:PATCH
+Active --> Disabled : /profile:PATCH{state:disabled}
+Disabled --> Active : /profile:PUT
+@enduml
+

@@ -1,0 +1,197 @@
+swagger: '2.0'
+info:
+    version: 0.1.0
+    title: Llevame
+    description: >
+        TODO
+host: url.goes.here
+basepath: /v0
+securityDefinitions:
+    apikey:
+        type: apikey
+        name: appserver_token
+        in: query
+schemes:
+    - https
+    - http
+consumes:
+    - application/json
+produces:
+    - application/json
+paths:
+    /drivers:
+        get:
+            summary: List nearby drivers
+            operationId: listDrivers
+            tags:
+                - passengers
+                - drivers
+    /trips:
+        get:
+            summary: List nearby trips
+            operationId: listTrips
+
+            security:
+                - apikey: []
+            tags:
+                - Trips
+                - Drivers
+            responses:
+                "200":
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#definitions/Trip'
+        put:
+            summary: Place a trip
+            operationId: placeTrip
+            tags:
+                - trips
+                - passengers
+            parameters:
+                - name: passengerId
+                  in: query
+                  required: true
+                  type: integer
+                  format: int64
+                - name: driverId
+                  in: query
+                  required: true
+                  type: integer
+                  format: int64
+                - name: start
+                  in: query
+                  required: true
+                  type:
+                      $ref: '#definitions/Waypoint'
+                - name: end
+                  in: query
+                  required: true
+                  type:
+                      $ref: '#definitions/Waypoint'
+                - name: route
+                  in: query
+                  required: false
+                  type: array
+                  items:
+                      $ref: '#definitions/Waypoint'
+            security:
+                - apikey: []
+        patch:
+            summary: Edit trip
+            operationId: editTrip
+            tags:
+                - trips
+                - passengers
+                - drivers
+            parameters:
+                - name: tripId
+                  in: query
+                  required: true
+                  type: integer
+                  format: int64
+                - name: state
+                  in: query
+                  required: true
+                  type: string
+            security:
+                - apikey: []
+        post:
+            summary: Post comment on trip
+            operationId: commentTrip
+            tags:
+                - trips
+                - passengers
+                - drivers
+            parameters:
+                - name: tripId
+                  in: query
+                  required: true
+                  type: integer
+                  format: int64
+                - name: message
+                  in: query
+                  required: true
+                  type: string
+            security:
+                - apikey []
+
+definitions:
+    User:
+        title: 'User'
+        type: object
+        required:
+            - userId
+            - username
+            - fullname
+        properties:
+            userId:
+                type: integer
+                format: int64
+            username:
+                type: string
+            fullname:
+                type: string
+    Comment:
+        title: 'Comment'
+        type: object
+        required:
+            - userId
+            - tripId
+            - message
+        properties:
+            tripId:
+                type: integer
+                format: int64
+            userId:
+                type: integer
+                format: int64
+            message:
+                type: string
+    Waypoint:
+        title: 'Waypoint'
+        type: object
+        required:
+            - latitude
+            - longitude
+        properties:
+            latitude:
+                  type: number
+                  format: double
+            longitude:
+                  type: number
+                  format: double
+    Trip:
+        title: 'Trip'
+        type: object
+        required:
+            - tripId
+            - passengerId
+            - driverId
+            - state
+        properties:
+            tripId:
+                type: integer
+                format: int64
+            passengerId:
+                type: integer
+                format: int64
+            driverId:
+                type: integer
+                format: int64
+            start:
+                $ref: '#definitions/Waypoint'
+            end:
+                $ref: '#definitions/Waypoint'
+            route:
+                type: array
+                items:
+                    $ref: '#definitions/Waypoint'
+            state:
+                type: string
+            comments:
+                type: array
+                items:
+                    $ref: '#definitions/Comment'
+
+

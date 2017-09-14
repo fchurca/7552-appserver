@@ -1,0 +1,8 @@
+@startuml
+[*] --> Active : /profile:PUT{fbid} > apikey
+Active --> Inactive : /profile:PATCH{state:logout}
+Inactive --> Active : /profile:PATCH{fbid,fbkey} > apikey
+
+@enduml
+
+
