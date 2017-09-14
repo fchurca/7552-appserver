@@ -1,13 +1,25 @@
 # Python Application Server
 
-## Useful links
-[Subject site](http://7552.fi.uba.ar/)
-[Assignment](https://github.com/taller-de-programacion-2/taller-de-programacion-2.github.io/blob/master/trabajo-practico/enunciados/2017/2/llevame.md)
-
 | Environment | Build | Coverage|
 |--------|-------|---------|
 | [Master](https://github.com/fchurca/7552-appserver) | [![Build Status](https://travis-ci.org/fchurca/7552-appserver.svg?branch=master)](https://travis-ci.org/fchurca/7552-appserver)| [![Coverage Status](https://coveralls.io/repos/github/fchurca/7552-appserver/badge.svg)](https://coveralls.io/github/fchurca/7552-appserver)|
 | [Stage](https://github.com/adrian-mb/python-appserver) | [![Build Status](https://travis-ci.org/adrian-mb/python-appserver.svg?branch=master)](https://travis-ci.org/adrian-mb/python-appserver) | [![Coverage Status](https://coveralls.io/repos/github/adrian-mb/python-appserver/badge.svg)](https://coveralls.io/github/adrian-mb/python-appserver) |
+
+## Associated Acts
+* [Heroku Dashboard](https://dashboard.heroku.com/teams/) (you are logged in, aren't you?)
+
+* Master repositories
+    * Android client: [https://github.com/smaraggi/HG-android-client/network]
+    * Appserver (this repo): [https://github.com/fchurca/7552-appserver]
+    * Shared server: [https://github.com/fchurca/7552-appserver]
+
+* Staging repositories
+    * [https://github.com/florrup/sharedserver]
+    * [https://github.com/adrian-mb/python-appserver]
+
+## Useful links
+* [Subject site](http://7552.fi.uba.ar/)
+* [Assignment](https://github.com/taller-de-programacion-2/taller-de-programacion-2.github.io/blob/master/trabajo-practico/enunciados/2017/2/llevame.md)
 
 ## Dependencies
 For a Docker server on Debian:
