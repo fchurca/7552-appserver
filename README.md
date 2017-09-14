@@ -1,9 +1,12 @@
 # Python Application Server
 
+## Useful links
+[Subject site](http://7552.fi.uba.ar/)
+[Assignment](https://github.com/taller-de-programacion-2/taller-de-programacion-2.github.io/blob/master/trabajo-practico/enunciados/2017/2/llevame.md)
 
 | Environment | Build | Coverage|
 |--------|-------|---------|
-| Master | | |
+| [Master] | [![Build Status](https://travis-ci.org/fchurca/7552-appserver.svg?branch=master)](https://travis-ci.org/fchurca/7552-appserver)| [![Coverage Status](https://coveralls.io/repos/github/fchurca/7552-appserver/badge.svg)](https://coveralls.io/github/fchurca/7552-appserver)|
 | [Stage](https://github.com/adrian-mb/python-appserver) | [![Build Status](https://travis-ci.org/adrian-mb/python-appserver.svg?branch=master)](https://travis-ci.org/adrian-mb/python-appserver) | [![Coverage Status](https://coveralls.io/repos/github/adrian-mb/python-appserver/badge.svg)](https://coveralls.io/github/adrian-mb/python-appserver) |
 
 ## Dependencies
@@ -89,3 +92,15 @@ appserver$ apt-get install doxygen graphviz
 appserver$ doxygen
 ```
 HTML documentation will be placed inside the docs/generated directory.
+
+## Troubleshooting
+
+### Mongo complains about `No space left on device: "/data/db/journal"`
+
+Dangling old volumes may still be laying around
+```
+# list
+docker volume ls -qf dangling=true
+# remove
+docker volume rm $(docker volume ls -qf dangling=true)
+```
