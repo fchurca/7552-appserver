@@ -1,27 +1,14 @@
 import flask
+import flask_restful
 
-from appserver.presentation.greet import GreetController
+from appserver.presentation.user import UserResource
+from appserver.presentation.token import TokenResource
+from appserver.presentation.drivers import DriversResource
 
 app = flask.Flask(__name__)
+api = flask_restful.Api(app)
 
-def handle(controller, pathvars):
-    rq = flask.request
-    
-    controller_rs = controller.handle({
-          'method'   : rq.method,
-          'values'   : rq.values,
-          'cookies'  : rq.cookies,
-          'headers'  : rq.headers,
-          'body'     : rq.data,
-          'pathvars' : pathvars,
-        })
-    
-    flask_response = flask.make_response(
-        controller_rs['body'], 
-        controller_rs['status'])
-    
-    return flask_response
+api.add_resource(UserResource, '/user/')
+api.add_resource(TokenResource, '/token/')
+api.add_resource(DriversResource, '/drivers/')
 
-@app.route('/greet/<name>')
-def greet(name):
-    return handle(GreetController(), { 'name' : name })
