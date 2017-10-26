@@ -30,7 +30,7 @@ class TokenResource(Resource):
                 token=str(datetime.now()).encode('ascii')
                 logger.debug('token: %s', token)
                 if repository.update(key, {'token':token}):
-                    return base64.b64encode(token).decode('ascii'), 202
+                    return {'token': base64.b64encode(token).decode('ascii')}, 202
                 else:
                     return None, 500
         else:
