@@ -27,7 +27,7 @@ class TokenResource(Resource):
                 return 'Wrong username and/or password', 401
             else:
                 logger.info('create token')
-                token=str(datetime.now()).encode('ascii')
+                token='{}|{}'.format(user['username'],str(datetime.now())).encode('ascii')
                 logger.debug('token: %s', token)
                 if repository.update(key, {'token':token}):
                     return {'token': base64.b64encode(token).decode('ascii')}, 202

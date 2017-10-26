@@ -13,9 +13,28 @@ repository = UserRepository()
 class UserResource(Resource):
     def get(self):
         logger.info('method:GET')
-        ret=list(repository.find())
-        logger.info(ret)
-        return ret
+
+        if (not 'Authorization' in request.headers):
+            logger.warn('no authorizationHeader')
+            return 'Missing Authorization header', 401
+        authorizationHeader=request.headers['Authorization']
+        logger.info('Authorization header: %s', authorizationHeader)
+        if (not re.match(re.compile(r'^bearer\W', re.I), authorizationHeader)):
+            logger.warn('no bearer')
+            return 'Authorization header is not Bearer', 401
+        tokenpayload = b64decode(re.compile(r'^bearer\s+(.*)$', re.I).sub(r'\1',authorizationHeader))
+        logger.info('Tokenpayload: %s', tokenpayload)
+        username,token=tokenpayload.decode('ascii').split('|')
+        logger.info('Username: %s', username)
+        logger.info('Token: %s', token)
+        user = repository.find_one(username, {'password': False})
+        if user['token'] != tokenpayload:
+            logger.info('wrong token')
+            return 'Session expired', 401
+        else:
+            logger.info('get user')
+            del user['token']
+            return user, 200
     def post(self):
         logger.info('method:POST')
         content = request.get_json()
@@ -32,10 +51,12 @@ class UserResource(Resource):
             if (not re.match(re.compile(r'^bearer\W', re.I), authorizationHeader)):
                 logger.warn('no bearer')
                 return 'Authorization header is not Bearer', 401
-            token = b64decode(re.compile(r'^bearer\s+(.*)$', re.I).sub(r'\1',authorizationHeader))
-            logger.info('Token: %s', token)
+            tokenpayload = b64decode(re.compile(r'^bearer\s+(.*)$', re.I).sub(r'\1',authorizationHeader))
+            tusername, token = tokenpayload.decode('ascii').split('|')
+            logger.info('Proposed token: %s', tokenpayload)
+            logger.info('User token: %s', user['token'])
             logger.info('existing user')
-            if user['token'] != token:
+            if user['token'] != tokenpayload:
                 logger.info('wrong token')
                 return 'Session expired', 401
             else:
