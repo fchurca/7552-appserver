@@ -20,25 +20,20 @@ class _SharedServerConfig(object):
     def __init__(self):
         config = appconfig.APP_CONFIG.get_file(self.SHAREDSERVER_CONFIG)
             
-        self._url = config.get(
-            _SharedServerConfig.SECTION_CONNECTION,
-            _SharedServerConfig.KEY_URL,
-            _SharedServerConfig.KEY_URL_DEFAULT)
-        self._token = EnvironmentVariable(_SharedServerConfig.TOKEN_VAR).get_value()
-
-    def _load_url(self, config):
+        url = None
         sharedserver_var = config.get(
             _SharedServerConfig.SECTION_CONNECTION,
             _SharedServerConfig.KEY_SHARED_VAR,
             _SharedServerConfig.KEY_SHARED_VAR_DEFAULT)
-
         if not sharedserver_var:
-            return config.get(
+            url = config.get(
                 _SharedServerConfig.SECTION_CONNECTION,
                 _SharedServerConfig.KEY_URL,
                 _SharedServerConfig.KEY_URL_DEFAULT)
         else:
-            return EnvironmentVariable(sharedserver_var).get_value()
+            url = EnvironmentVariable(sharedserver_var).get_value()
+        self._url = url
+        self._token = EnvironmentVariable(_SharedServerConfig.TOKEN_VAR).get_value()
 
     def get_token(self):
         return self._token
