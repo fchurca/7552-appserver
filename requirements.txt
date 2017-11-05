@@ -2,4 +2,5 @@ flask
 flask-restful
 gunicorn
 pymongo
+requests
 coverage
