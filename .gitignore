@@ -4,4 +4,4 @@
 .pydevproject
 *.pyc
 docs/generated/
-
+src/core
