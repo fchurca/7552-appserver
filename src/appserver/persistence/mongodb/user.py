@@ -21,7 +21,8 @@ class UserRepository(object):
         projection['token'] = False
         return collection.find(filter, projection)
     def find_one(self, username, projection={}):
-        logger.info('find_one', username)
+        logger.info('find_one')
+        logger.debug(username)
         projection['_id'] = False
         return collection.find_one({'username': username}, projection)
 
