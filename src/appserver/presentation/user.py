@@ -62,7 +62,7 @@ class UserResource(Resource):
             if r.status_code != 200:
                 logger.warn('error getting remote user')
                 return 'Error retrieving remote user from sharedserver', 400
-            logger.debug('remote user retrieved')
+            logger.info('remote user retrieved')
             logger.debug(r.json())
             data = {**r.json(), **user}
             data = {**data, **content}
@@ -72,7 +72,7 @@ class UserResource(Resource):
             logger.debug(r.__dict__)
             if r.status_code != 200:
                 logger.warn('error updating remote user')
-#                return 'Error updating remote user on sharedserver', 400
+                return 'Error updating remote user on sharedserver', 400
             if not repository.update(username, content):
                 return "There was an error processing the request", 500
 
