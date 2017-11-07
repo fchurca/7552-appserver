@@ -50,6 +50,8 @@ class SharedServerRemote(object):
         logger.info('insertUser')
         userSpecifics = {
                 '_ref': random.randint(0, 2147483647),
+                'type': 'new',
+                'email': data['email'],
                 'username': data['username'],
                 'password': data['password']}
         userData = {**userTemplate, **userSpecifics}
