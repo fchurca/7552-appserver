@@ -1,40 +1,32 @@
-import re
-from base64 import b64decode
+import flask
+from flask import abort
 from flask import request
 from flask_restful import Resource
 from appserver.applog import LoggerFactory
+from appserver.auth import Auth
 from appserver.persistence.mongodb.user import UserRepository
-
-import flask
+from appserver.remotes.sharedserver.remote import SharedServerRemote
 
 logger = LoggerFactory().getLogger('UserResource')
 repository = UserRepository()
+remote = SharedServerRemote()
 
 class UserResource(Resource):
     def get(self):
         logger.info('method:GET')
-
-        if (not 'Authorization' in request.headers):
-            logger.warn('no authorizationHeader')
-            return 'Missing Authorization header', 401
-        authorizationHeader=request.headers['Authorization']
-        logger.info('Authorization header: %s', authorizationHeader)
-        if (not re.match(re.compile(r'^bearer\W', re.I), authorizationHeader)):
-            logger.warn('no bearer')
-            return 'Authorization header is not Bearer', 401
-        tokenpayload = b64decode(re.compile(r'^bearer\s+(.*)$', re.I).sub(r'\1',authorizationHeader))
-        logger.info('Tokenpayload: %s', tokenpayload)
-        username,token=tokenpayload.decode('ascii').split('|')
-        logger.info('Username: %s', username)
-        logger.info('Token: %s', token)
-        user = repository.find_one(username, {'password': False})
-        if user['token'] != tokenpayload:
-            logger.info('wrong token')
+        user = Auth.authenticate()
+        if (user is None):
+            logger.info('Unauthorized')
             return 'Session expired', 401
-        else:
-            logger.info('get user')
-            del user['token']
-            return user, 200
+        logger.info('local success')
+        r = remote.getUser(user['ssId'])
+        logger.debug(r)
+        if (r.status_code != 200):
+            logger.warn('remote data unavailable!')
+        user.update(r.json())
+        logger.debug(user)
+        return user, 200
+
     def post(self):
         logger.info('method:POST')
         content = request.get_json()
@@ -44,35 +36,45 @@ class UserResource(Resource):
             if (repository.find_one(username)):
                 logger.warn('User exists')
                 return 'User already exists', 409
-            else:
-                logger.debug('User didn\'t exist')
-                if repository.insert(content):
-                    logger.debug('Success')
-                    return repository.find_one(username, {'token': False, 'password': False}), 202
-                else:
-                    logger.debug('Error')
-                    return 'There was an error creating the user', 500
+            logger.debug('User didn\'t exist')
+            r = remote.insertUser(content)
+            logger.debug(r.__dict__)
+            if r.status_code != 201:
+                logger.info('sharedserver error')
+                return 'There was an error creating the user', 500
+            logger.info('sharedserver user creation succeeded')
+
+            content['ssId'] = r.json()['user']['id']
+            if not repository.insert(content):
+                logger.info('Error')
+                return 'There was an error creating the user', 500
+            logger.info('Success')
+
+            return repository.find_one(username, {'token': False, 'password': False}), 202
         else:
-            authorizationHeader=request.headers['Authorization']
-            logger.info('Authorization header: %s', authorizationHeader)
-            if (not re.match(re.compile(r'^bearer\W', re.I), authorizationHeader)):
-                logger.warn('no bearer')
-                return 'Authorization header is not Bearer', 401
-            tokenpayload = b64decode(re.compile(r'^bearer\s+(.*)$', re.I).sub(r'\1',authorizationHeader))
-            logger.info('Tokenpayload: %s', tokenpayload)
-            username,token=tokenpayload.decode('ascii').split('|')
-            logger.info('Username: %s', username)
-            logger.info('Token: %s', token)
-            user = repository.find_one(username, {'password': False})
-            if user['username'] != username:
-                logger.info('wrong username')
-                return 'Wrong username', 403
-            if user['token'] != tokenpayload:
-                logger.info('wrong token')
-                return 'Session expired', 401
             logger.info('update user')
-            if repository.update(username, content):
-                return repository.find_one(username, {'token': False, 'password': False}), 202
-            else:
+            user = Auth.authenticate()
+            if (user is None):
+                logger.info('Unauthorized')
+                return 'Session expired', 401
+            username = user['username']
+            r = remote.getUser(user['ssId'])
+            if r.status_code != 200:
+                logger.warn('error getting remote user')
+                return 'Error retrieving remote user from sharedserver', 400
+            logger.debug('remote user retrieved')
+            logger.debug(r.json())
+            data = {**r.json(), **user}
+            data = {**data, **content}
+            del data['ssId']
+            logger.debug(data)
+            r = remote.updateUser(user['ssId'], data)
+            logger.debug(r.__dict__)
+            if r.status_code != 200:
+                logger.warn('error updating remote user')
+#                return 'Error updating remote user on sharedserver', 400
+            if not repository.update(username, content):
                 return "There was an error processing the request", 500
+
+            return repository.find_one(username, {'token': False, 'password': False}), 202
 

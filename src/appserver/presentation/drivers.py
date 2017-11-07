@@ -14,7 +14,7 @@ repository = UserRepository()
 
 class DriversResource(Resource):
     def get(self):
-        remote.query('users')
+        remote.get('users')
         logger.info('method:GET')
         ret=list(repository.find({'type':'driver'}))
         return ret
