@@ -24,6 +24,11 @@ class UserResource(Resource):
         if (r.status_code != 200):
             logger.warn('remote data unavailable!')
         user.update(r.json())
+        r = remote.getCars(format(user['ssId']))
+        logger.debug(r)
+        if (r.status_code != 200):
+            logger.warn('remote data unavailable!')
+        user.update({'cars':r.json()['cars']})
         logger.debug(user)
         return user, 200
 

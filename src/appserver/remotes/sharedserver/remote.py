@@ -70,3 +70,7 @@ class SharedServerRemote(object):
         logger.info('updateUser')
         return self.put('users/{}'.format(ssId), data)
 
+    def getCars(self, ssId):
+        logger.info('getCars')
+        return self.get('users/{}/cars'.format(ssId))
+
