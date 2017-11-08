@@ -1,7 +1,5 @@
 import string
 import requests
-import random
-
 from appserver.remotes.sharedserver import SHARED_CONFIG
 from appserver.applog import LoggerFactory
 
@@ -51,7 +49,7 @@ class SharedServerRemote(object):
     def insertUser(self, data):
         logger.info('insertUser')
         userSpecifics = {
-                '_ref': random.randint(0, 2147483647),
+                '_ref': 'LEGACY',
                 'type': 'new',
                 'email': data['email'],
                 'username': data['username'],

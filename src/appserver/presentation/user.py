@@ -22,6 +22,9 @@ class UserResource(Resource):
         logger.info('local success')
         r = remote.getUser(user['ssId'])
         logger.debug(r)
+        if (r.status_code == 404):
+            logger.warn('user nonexistent!')
+            return None, 404
         if (r.status_code != 200):
             logger.warn('remote data unavailable!')
         user.update(r.json())
@@ -102,15 +105,15 @@ class UserResource(Resource):
                     '_ref': None,
                     'owner': ssId,
                     'properties':[carModel, carPatent]}
-                if 'id' in car:
+                if ('id' in car and car['id'] != None):
                     ssCar.update({
                         'id': car['id'],
-                        '_ref': car['_ref']})
+                        '_ref': 'LEGACY'})
                     logger.debug(remote.updateCar(ssId, ssCar))
                 else:
                     ssCar.update({
                         'id': random.randint(0, 2147483647),
-                        '_ref': random.randint(0, 2147483647)})
+                        '_ref': 'LEGACY'})
                     logger.debug(remote.insertCar(ssId, ssCar))
 
             if not repository.update(username, content):
