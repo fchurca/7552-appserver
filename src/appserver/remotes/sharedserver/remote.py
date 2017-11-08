@@ -32,7 +32,9 @@ class SharedServerRemote(object):
         logger.debug(uri)
         logger.debug(data)
         logger.debug(self.headers)
-        return requests.request(method, uri, headers=self.headers, data=data)
+        r = requests.request(method, uri, headers=self.headers, data=data)
+        logger.debug(r.__dict__)
+        return r
 
     def get(self, path):
         logger.info('get')
@@ -73,4 +75,9 @@ class SharedServerRemote(object):
     def getCars(self, ssId):
         logger.info('getCars')
         return self.get('users/{}/cars'.format(ssId))
+
+    def insertCar(self, ssUserId, data):
+        logger.info('insertCar')
+        logger.debug(data)
+        return self.post('users/{}/cars'.format(ssUserId),data)
 

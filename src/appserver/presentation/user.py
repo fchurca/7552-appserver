@@ -1,4 +1,5 @@
 import flask
+import random
 from flask import abort
 from flask import request
 from flask_restful import Resource
@@ -28,7 +29,16 @@ class UserResource(Resource):
         logger.debug(r)
         if (r.status_code != 200):
             logger.warn('remote data unavailable!')
-        user.update({'cars':r.json()['cars']})
+        ssCars = r.json()['cars']
+        cars = []
+        for ssCar in ssCars:
+            properties = ssCar['properties']
+            cars.append({
+                'id': ssCar['id'],
+                '_ref': ssCar['_ref'],
+                'model': properties[0],
+                'patent': properties[1]})
+        user.update({'cars': cars})
         logger.debug(user)
         return user, 200
 
@@ -63,7 +73,8 @@ class UserResource(Resource):
                 logger.info('Unauthorized')
                 return 'Session expired', 401
             username = user['username']
-            r = remote.getUser(user['ssId'])
+            ssId = user['ssId']
+            r = remote.getUser(ssId)
             if r.status_code != 200:
                 logger.warn('error getting remote user')
                 return 'Error retrieving remote user from sharedserver', 400
@@ -72,12 +83,29 @@ class UserResource(Resource):
             data = {**r.json(), **user}
             data = {**data, **content}
             del data['ssId']
+            del data['password']
+            cars = None
+            if 'cars' in data:
+                cars = data['cars']
+                del data['cars']
             logger.debug(data)
-            r = remote.updateUser(user['ssId'], data)
+            r = remote.updateUser(ssId, data)
             logger.debug(r.__dict__)
             if r.status_code != 200:
                 logger.warn('error updating remote user')
                 return 'Error updating remote user on sharedserver', 400
+            for car in cars:
+                logger.debug(car)
+                carModel = car['model']
+                carPatent = car['patent']
+                carId = random.randint(0, 2147483647)
+                carRef = random.randint(0, 2147483647)
+                ssCar = {'id': carId,
+                    '_ref': carRef,
+                    'owner': ssId,
+                    'properties':[carModel, carPatent]}
+                logger.debug(remote.insertCar(ssId, ssCar))
+
             if not repository.update(username, content):
                 return "There was an error processing the request", 500
 
