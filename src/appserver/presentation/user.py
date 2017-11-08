@@ -98,13 +98,20 @@ class UserResource(Resource):
                 logger.debug(car)
                 carModel = car['model']
                 carPatent = car['patent']
-                carId = random.randint(0, 2147483647)
-                carRef = random.randint(0, 2147483647)
-                ssCar = {'id': carId,
-                    '_ref': carRef,
+                ssCar = {'id': None,
+                    '_ref': None,
                     'owner': ssId,
                     'properties':[carModel, carPatent]}
-                logger.debug(remote.insertCar(ssId, ssCar))
+                if 'id' in car:
+                    ssCar.update({
+                        'id': car['id'],
+                        '_ref': car['_ref']})
+                    logger.debug(remote.updateCar(ssId, ssCar))
+                else:
+                    ssCar.update({
+                        'id': random.randint(0, 2147483647),
+                        '_ref': random.randint(0, 2147483647)})
+                    logger.debug(remote.insertCar(ssId, ssCar))
 
             if not repository.update(username, content):
                 return "There was an error processing the request", 500

@@ -81,3 +81,8 @@ class SharedServerRemote(object):
         logger.debug(data)
         return self.post('users/{}/cars'.format(ssUserId),data)
 
+    def updateCar(self, ssUserId, data):
+        logger.info('updateCar')
+        logger.debug(data)
+        return self.put('users/{}/cars/{}'.format(ssUserId, data['id']),data)
+
