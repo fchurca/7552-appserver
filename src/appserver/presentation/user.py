@@ -53,7 +53,7 @@ class UserResource(Resource):
         user=None
         if (not 'Authorization' in request.headers):
             logger.info('No authorizationheader; new user')
-            username=content['username']
+            username='local:{}'.format(content['username'])
             if (repository.find_one(username)):
                 logger.warn('User exists')
                 return 'User already exists', 409
