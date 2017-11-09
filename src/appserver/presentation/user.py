@@ -104,14 +104,13 @@ class UserResource(Resource):
                 logger.debug(car)
                 carModel = car['model']
                 carPatent = car['patent']
-                ssCar = {'_ref': 'LEGACY',
+                ssCar = {
                     'owner': ssId,
                     'properties':[carModel, carPatent]}
                 if ('id' in car and car['id'] != None):
                     ssCar['id'] = car['id']
                     logger.debug(remote.updateCar(ssId, ssCar))
                 else:
-                    ssCar['id'] = random.randint(0, 2147483647)
                     logger.debug(remote.insertCar(ssId, ssCar))
 
         return self._get(user)
