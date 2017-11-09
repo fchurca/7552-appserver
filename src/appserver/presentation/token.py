@@ -39,6 +39,12 @@ class TokenResource(Resource):
 
         r = remote.validateUser(ssReq)
         logger.debug(r.__dict__)
+        if (r.status_code == 412):
+            logger.info('Precondition failed, creating user first')
+            j = r.json()
+            remote.insertFacebookUser({'userId':j['userId'], 'authToken':fbToken})
+            r = remote.validateUser(ssReq)
+
         if (r.status_code != 200):
             logger.info('wrong password')
             return 'Wrong username and/or password', 401

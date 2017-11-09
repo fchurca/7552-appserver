@@ -18,7 +18,7 @@ userTemplate={
         'country':'',
         'email':'',
         'birthdate':'',
-        'image':[]}
+        'images':[]}
 
 class SharedServerRemote(object):
     def __init__(self):
@@ -30,7 +30,7 @@ class SharedServerRemote(object):
         logger.debug(uri)
         logger.debug(data)
         logger.debug(self.headers)
-        r = requests.request(method, uri, headers=self.headers, data=data)
+        r = requests.request(method, uri, headers=self.headers, json=data)
         logger.debug(r.__dict__)
         return r
 
@@ -54,6 +54,16 @@ class SharedServerRemote(object):
                 'email': data['email'],
                 'username': data['username'],
                 'password': data['password']}
+        userData = {**userTemplate, **userSpecifics}
+        logger.debug(userData)
+        return self.post('users', userData)
+
+    def insertFacebookUser(self, data):
+        logger.info('insertUser')
+        userSpecifics = {
+                '_ref': 'LEGACY',
+                'type': 'new',
+                'fb': data}
         userData = {**userTemplate, **userSpecifics}
         logger.debug(userData)
         return self.post('users', userData)
