@@ -13,13 +13,7 @@ repository = UserRepository()
 remote = SharedServerRemote()
 
 class UserResource(Resource):
-    def get(self):
-        logger.info('method:GET')
-        user = Auth.authenticate()
-        if (user is None):
-            logger.info('Unauthorized')
-            return 'Session expired', 401
-        logger.info('local success')
+    def _get(self, user):
         r = remote.getUser(user['ssId'])
         logger.debug(r)
         if (r.status_code == 404):
@@ -38,16 +32,25 @@ class UserResource(Resource):
             properties = ssCar['properties']
             cars.append({
                 'id': ssCar['id'],
-                '_ref': ssCar['_ref'],
                 'model': properties[0],
                 'patent': properties[1]})
         user.update({'cars': cars})
         logger.debug(user)
         return user, 200
 
+    def get(self):
+        logger.info('method:GET')
+        user = Auth.authenticate()
+        if (user is None):
+            logger.info('Unauthorized')
+            return 'Session expired', 401
+        logger.info('local success')
+        return self._get(user)
+
     def post(self):
         logger.info('method:POST')
         content = request.get_json()
+        user=None
         if (not 'Authorization' in request.headers):
             logger.info('No authorizationheader; new user')
             username=content['username']
@@ -62,13 +65,13 @@ class UserResource(Resource):
                 return 'There was an error creating the user', 500
             logger.info('sharedserver user creation succeeded')
 
-            content['ssId'] = r.json()['user']['id']
-            if not repository.insert(content):
+            ssId = r.json()['user']['id']
+            if not repository.insert({'username':username,'ssId':ssId}):
                 logger.info('Error')
                 return 'There was an error creating the user', 500
+            user = repository.find_one(username)
             logger.info('Success')
 
-            return repository.find_one(username, {'token': False, 'password': False}), 202
         else:
             logger.info('update user')
             user = Auth.authenticate()
@@ -101,23 +104,15 @@ class UserResource(Resource):
                 logger.debug(car)
                 carModel = car['model']
                 carPatent = car['patent']
-                ssCar = {'id': None,
-                    '_ref': None,
+                ssCar = {'_ref': 'LEGACY',
                     'owner': ssId,
                     'properties':[carModel, carPatent]}
                 if ('id' in car and car['id'] != None):
-                    ssCar.update({
-                        'id': car['id'],
-                        '_ref': 'LEGACY'})
+                    ssCar['id'] = car['id']
                     logger.debug(remote.updateCar(ssId, ssCar))
                 else:
-                    ssCar.update({
-                        'id': random.randint(0, 2147483647),
-                        '_ref': 'LEGACY'})
+                    ssCar['id'] = random.randint(0, 2147483647)
                     logger.debug(remote.insertCar(ssId, ssCar))
 
-            if not repository.update(username, content):
-                return "There was an error processing the request", 500
-
-            return repository.find_one(username, {'token': False, 'password': False}), 202
+        return self._get(user)
 
