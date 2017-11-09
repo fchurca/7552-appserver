@@ -86,7 +86,7 @@ class UserResource(Resource):
                 return 'Error retrieving remote user from sharedserver', 400
             logger.info('remote user retrieved')
             logger.debug(r.json())
-            data = {**r.json(), **user}
+            data = {**user, **r.json()}
             data = {**data, **content}
             del data['ssId']
             del data['password']
