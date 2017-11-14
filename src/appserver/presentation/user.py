@@ -21,7 +21,7 @@ class UserResource(Resource):
             return None, 404
         if (r.status_code != 200):
             logger.warn('remote data unavailable!')
-        user.update(r.json())
+        user.update(r.json()['user'])
         r = remote.getCars(format(user['ssId']))
         logger.debug(r)
         if (r.status_code != 200):
@@ -86,7 +86,7 @@ class UserResource(Resource):
                 return 'Error retrieving remote user from sharedserver', 400
             logger.info('remote user retrieved')
             logger.debug(r.json())
-            data = {**user, **r.json()}
+            data = {**user, **r.json()['user']}
             if('ssId' in data):
                 del data['ssId']
             if('password' in data):
