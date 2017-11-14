@@ -87,9 +87,11 @@ class UserResource(Resource):
             logger.info('remote user retrieved')
             logger.debug(r.json())
             data = {**user, **r.json()}
+            if('ssId' in data):
+                del data['ssId']
+            if('password' in data):
+                del data['password']
             data = {**data, **content}
-            del data['ssId']
-            del data['password']
             cars = None
             if 'cars' in data:
                 cars = data['cars']
