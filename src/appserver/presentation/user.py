@@ -114,6 +114,13 @@ class UserResource(Resource):
                     logger.debug(remote.updateCar(ssId, ssCar))
                 else:
                     logger.debug(remote.insertCar(ssId, ssCar))
+            localDiff = {
+                    'type':data['type'],
+                    'firstName':data['firstName'],
+                    'lastName':data['lastName'],
+                    'cars':remote.getCars(ssId).json()['cars']}
+            repository.update(username, localDiff)
+
 
         return self._get(user)
 
