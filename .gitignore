@@ -5,3 +5,4 @@
 *.pyc
 docs/generated/
 src/core
+*.swp
