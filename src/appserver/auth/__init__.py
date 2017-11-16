@@ -25,7 +25,7 @@ class Auth(object):
         if user is None:
             logger.info('no user')
             return None
-        if user['token'] != tokenpayload:
+        if 'token' not in user or user['token'] != tokenpayload:
             logger.info('wrong token')
             return None
         else:

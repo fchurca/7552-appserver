@@ -118,6 +118,7 @@ class UserResource(Resource):
                     'type':data['type'],
                     'firstName':data['firstName'],
                     'lastName':data['lastName'],
+                    'country':data['country'],
                     'cars':remote.getCars(ssId).json()['cars']}
             repository.update(username, localDiff)
 
