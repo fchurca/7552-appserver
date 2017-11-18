@@ -5,6 +5,7 @@ import flask
 from flask import request
 from flask_restful import Resource
 from appserver.applog import LoggerFactory
+from appserver.auth import Auth
 from appserver.persistence.mongodb.user import UserRepository
 from appserver.remotes.sharedserver.remote import SharedServerRemote
 
@@ -68,4 +69,17 @@ class TokenResource(Resource):
             return {'token': base64.b64encode(token).decode('ascii')}, 202
         else:
             return None, 500
+    def delete(self):
+        logger.info('method:GET')
+        user = Auth.authenticate()
+        if (user is None):
+            logger.info('Unauthorized')
+            return None, 401
+        if not repository.collection.update(
+                {'username':user['username']},
+                {'$unset':{
+                    'location':1,
+                    'token':1}}):
+            return None, 500
+        return None, 200
 

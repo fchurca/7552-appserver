@@ -7,6 +7,8 @@ db = MONGO_CONFIG.get_database_from(cn)
 collection=db.users
 
 class UserRepository(object):
+    def __init__(self):
+        self.collection = collection
     def insert(self, user):
         logger.info('insert')
         user_id = collection.insert_one(user)
