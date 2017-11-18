@@ -30,6 +30,7 @@ class DriversResource(Resource):
                         'userId':ret['ssId'],
                         'location':getOrDefault('position',ret),
                         'profile':{
+                            'type':getOrDefault('type', ret),
                             'firstName':getOrDefault('firstName', ret),
                             'lastName':getOrDefault('lastName', ret),
                             'country':getOrDefault('country', ret),
