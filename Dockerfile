@@ -28,4 +28,4 @@ WORKDIR ${APPSERVER}
 EXPOSE 8080
 
 # Execute application
-CMD ["gunicorn", "--bind=0.0.0.0:8080", "--workers=4", "--reload", "appserver:app"]
+CMD gunicorn --bind=0.0.0.0:8080 --workers=4 --reload --timeout=60 --graceful-timeout=60 appserver:app
