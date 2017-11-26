@@ -16,6 +16,9 @@ class UserRepository(object):
     def update(self, username, payload):
         logger.info('update')
         return collection.update_one({'username': username}, {'$set':payload})
+    def update_ssId(self, ssId, payload):
+        logger.info('update_ssId')
+        return collection.update_one({'ssId': ssId}, {'$set':payload})
     def find(self, filter = {}, projection={}):
         logger.info('find')
         projection['_id'] = False
@@ -28,7 +31,7 @@ class UserRepository(object):
         projection['_id'] = False
         return collection.find_one({'username': username}, projection)
     def find_one_ssId(self, ssId, projection={}):
-        logger.info('find_one')
+        logger.info('find_one_ssId')
         logger.debug(ssId)
         projection['_id'] = False
         return collection.find_one({'ssId': ssId}, projection)

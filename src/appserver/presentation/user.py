@@ -92,7 +92,7 @@ class UserResource(Resource):
             if('password' in data):
                 del data['password']
             data = {**data, **content}
-            cars = None
+            cars = []
             if 'cars' in data:
                 cars = data['cars']
                 del data['cars']
