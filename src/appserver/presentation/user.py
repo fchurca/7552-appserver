@@ -101,8 +101,8 @@ class UserResource(Resource):
             if('password' in data):
                 del data['password']
             data = {**data, **content}
-            del data['card']
-            del data['cars']
+            if 'card' in data: del data['card']
+            if 'cars' in data: del data['cars']
             logger.debug(data)
             r = remote.updateUser(ssId, data)
             logger.debug(r.__dict__)
