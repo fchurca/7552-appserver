@@ -152,7 +152,7 @@ class TripsCurrentResource(Resource):
         trip = tripRepository.find_one(trip_id)
         logger.debug(trip)
         if ('state' not in trip
-                or trip['state'] != 'WAITING'):
+                or trip['state'] != 'waiting'):
             logger.warn('Trip not waiting')
             return 'Trip not waiting', 400
         logger.debug('Trip waiting')
