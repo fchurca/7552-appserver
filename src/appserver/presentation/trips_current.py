@@ -126,7 +126,7 @@ class TripsCurrentResource(Resource):
             userRepository.update_ssId(driver_ssId,{'trip_id':None})
             userRepository.update_ssId(passenger_ssId,{'trip_id':None})
             notification = {
-                    'type':'TRIP_REPORT',
+                    'type':'FINISH_TRIP',
                     'payload':{
                         'cost':costReport,
                         'start':trip['start'],
