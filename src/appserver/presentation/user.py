@@ -131,7 +131,7 @@ class UserResource(Resource):
                         logger.debug(remote.insertCar(ssId, ssCar))
                 localDiff['cars'] = remote.getCars(ssId).json()['cars']
             card = None
-            if 'card' in content:
+            if 'card' in content and content['card'] is not None:
                 userCard = content['card']
                 month,year = map(int,userCard['expirationDate'].split('/'))
                 number = userCard['number']
