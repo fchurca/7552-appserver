@@ -3,17 +3,13 @@ from flask_restful import Resource
 from appserver.applog import LoggerFactory
 from appserver.auth import Auth
 from appserver.persistence.mongodb.user import UserRepository
+from appserver.remotes.fcm import FCMRemote
 
 import json
-import flask
-import requests
-import os
 
 logger = LoggerFactory().getLogger('NotificationsResource')
 repository = UserRepository()
-
-FCM_URL='https://fcm.googleapis.com/fcm/send'
-FCM_API_KEY = os.getenv('FCM_API_KEY')
+remote = FCMRemote()
 
 class NotificationsResource(Resource):
     def post(self):
@@ -24,12 +20,9 @@ class NotificationsResource(Resource):
         content = request.get_json()
         targetUser = repository.find_one_ssId(content['userId'])
         logger.debug(targetUser)
-        headers={'Content-Type':'application/json',
-                'Authorization':'key={}'.format(FCM_API_KEY)}
-        data={'to':targetUser['fcmToken'],
-                'data':{'type':content['type'],
-                    'payload':content['payload']}}
-        r = requests.post(FCM_URL, headers=headers, json=data)
+        r = remote.notify(targetUser, {
+            'type':content['type'],
+            'payload':content['payload']})
         logger.debug(r)
         msgRes = None
         if (r.status_code == 200):
