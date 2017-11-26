@@ -1,4 +1,5 @@
 import flask
+import pycard
 import random
 from flask import abort
 from flask import request
@@ -14,18 +15,20 @@ remote = SharedServerRemote()
 
 class UserResource(Resource):
     def _get(self, user):
-        r = remote.getUser(user['ssId'])
+        ssId = user['ssId']
+        r = remote.getUser(ssId)
         logger.debug(r)
         if (r.status_code == 404):
             logger.warn('user nonexistent!')
             return None, 404
         if (r.status_code != 200):
-            logger.warn('remote data unavailable!')
-        user.update(r.json()['user'])
+            logger.warn('remote user data unavailable!')
+        else:
+            user.update(r.json()['user'])
         r = remote.getCars(format(user['ssId']))
         logger.debug(r)
         if (r.status_code != 200):
-            logger.warn('remote data unavailable!')
+            logger.warn('remote car data unavailable!')
         ssCars = r.json()['cars']
         cars = []
         for ssCar in ssCars:
@@ -35,6 +38,12 @@ class UserResource(Resource):
                 'model': properties[0],
                 'patent': properties[1]})
         user.update({'cars': cars})
+        card = None
+        l = repository.find_one_ssId(ssId)
+        if 'card' in l and l['card'] is not None:
+            card = l['card']
+            card['expirationDate'] = '{:0>2}/{}'.format(card['month'], card['year'])
+        user.update({'card': card})
         logger.debug(user)
         return user, 200
 
@@ -92,34 +101,56 @@ class UserResource(Resource):
             if('password' in data):
                 del data['password']
             data = {**data, **content}
-            cars = []
-            if 'cars' in data:
-                cars = data['cars']
-                del data['cars']
+            del data['card']
+            del data['cars']
             logger.debug(data)
             r = remote.updateUser(ssId, data)
             logger.debug(r.__dict__)
             if r.status_code != 200:
                 logger.warn('error updating remote user')
                 return 'Error updating remote user on sharedserver', 400
-            for car in cars:
-                logger.debug(car)
-                carModel = car['model']
-                carPatent = car['patent']
-                ssCar = {
-                    'owner': ssId,
-                    'properties':[carModel, carPatent]}
-                if ('id' in car and car['id'] != None):
-                    ssCar['id'] = car['id']
-                    logger.debug(remote.updateCar(ssId, ssCar))
-                else:
-                    logger.debug(remote.insertCar(ssId, ssCar))
             localDiff = {
                     'type':data['type'],
                     'firstName':data['firstName'],
                     'lastName':data['lastName'],
-                    'country':data['country'],
-                    'cars':remote.getCars(ssId).json()['cars']}
+                    'country':data['country']}
+            cars = []
+            if 'cars' in content:
+                cars = content['cars']
+                for car in cars:
+                    logger.debug(car)
+                    carModel = car['model']
+                    carPatent = car['patent']
+                    ssCar = {
+                        'owner': ssId,
+                        'properties':[carModel, carPatent]}
+                    if ('id' in car and car['id'] != None):
+                        ssCar['id'] = car['id']
+                        logger.debug(remote.updateCar(ssId, ssCar))
+                    else:
+                        logger.debug(remote.insertCar(ssId, ssCar))
+                localDiff['cars'] = remote.getCars(ssId).json()['cars']
+            card = None
+            if 'card' in content:
+                userCard = content['card']
+                month,year = map(int,userCard['expirationDate'].split('/'))
+                number = userCard['number']
+                cvc = userCard['cvc']
+                validationCard = pycard.Card(
+                        number=number,
+                        cvc=cvc,
+                        month=month,
+                        year=year)
+                logger.debug(validationCard)
+                card = {
+                        'number':number,
+                        'cvc':cvc,
+                        'month':month,
+                        'year':year,
+                        'brand':validationCard.brand}
+                localDiff['card'] = card
+                logger.debug(card)
+            logger.debug(localDiff)
             repository.update(username, localDiff)
 
 
