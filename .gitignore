@@ -6,3 +6,4 @@
 docs/generated/
 src/core
 *.swp
+/.env
