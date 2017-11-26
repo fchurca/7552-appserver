@@ -6,7 +6,7 @@ from flask_restful import Resource
 from appserver.applog import LoggerFactory
 from appserver.auth import Auth
 from appserver.persistence.mongodb.user import UserRepository
-from appserver.remotes.sharedserver.remote import SharedServerRemote
+from appserver.remotes.sharedserver import SharedServerRemote
 
 logger = LoggerFactory().getLogger('UserResource')
 repository = UserRepository()

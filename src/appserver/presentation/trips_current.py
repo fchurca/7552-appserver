@@ -8,7 +8,7 @@ from flask_restful import Resource
 from appserver.applog import LoggerFactory
 from appserver.persistence.mongodb.trip import TripRepository
 from appserver.persistence.mongodb.user import UserRepository
-from appserver.remotes.sharedserver.remote import SharedServerRemote
+from appserver.remotes.sharedserver import SharedServerRemote
 from appserver.auth import Auth
 
 logger = LoggerFactory().getLogger('TripsCurrentResource')
@@ -117,7 +117,6 @@ class TripsCurrentResource(Resource):
                 'totalTime':total_time})
             userRepository.update_ssId(trip['driver_ssId'],{'trip_id':None})
             userRepository.update_ssId(trip['passenger_ssId'],{'trip_id':None})
-            # TODO: Hit sharedserver
             # TODO: Notify driver, passenger
         logger.info('success')
         return tripRepository.find_one(trip_id), 200

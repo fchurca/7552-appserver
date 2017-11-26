@@ -2,7 +2,7 @@ from flask import request
 from flask_restful import Resource
 from appserver.applog import LoggerFactory
 from appserver.persistence.mongodb.user import UserRepository
-from appserver.remotes.sharedserver.remote import SharedServerRemote
+from appserver.remotes.sharedserver import SharedServerRemote
 
 import json
 
