@@ -8,11 +8,11 @@ from appserver.persistence.mongodb import MONGO_CONFIG
 logger = LoggerFactory().getLogger('AdminResource')
 cn = MONGO_CONFIG.get_connection()
 db = MONGO_CONFIG.get_database_from(cn)
-collection=db.users
 
 class AdminResource(Resource):
     def post(self):
         logger.info(':POST')
-        logger.debug(collection.drop())
+        logger.debug(db.users.drop())
+        logger.debug(db.trips.drop())
         return None, 200
 
