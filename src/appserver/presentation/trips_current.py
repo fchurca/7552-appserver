@@ -8,13 +8,15 @@ from flask_restful import Resource
 from appserver.applog import LoggerFactory
 from appserver.persistence.mongodb.trip import TripRepository
 from appserver.persistence.mongodb.user import UserRepository
+from appserver.remotes.fcm import FCMRemote
 from appserver.remotes.sharedserver import SharedServerRemote
 from appserver.auth import Auth
 
 logger = LoggerFactory().getLogger('TripsCurrentResource')
 tripRepository = TripRepository()
 userRepository = UserRepository()
-remote = SharedServerRemote()
+fcmRemote = FCMRemote()
+ssRemote = SharedServerRemote()
 
 class TripsCurrentResource(Resource):
     def get(self):
@@ -83,11 +85,12 @@ class TripsCurrentResource(Resource):
             trip_times['end'] = datetime.datetime.now().isoformat()
             travel_time = (dateutil.parser.parse(trip_times['end']) - dateutil.parser.parse(trip_times['in_car'])).total_seconds()
             total_time = (dateutil.parser.parse(trip_times['end']) - dateutil.parser.parse(trip_times['accept'])).total_seconds()
-
-            r = remote.insertTrip({
+            driver_ssId = trip['driver_ssId']
+            passenger_ssId = trip['passenger_ssId']
+            r = ssRemote.insertTrip({
                 'trip':{
-                    'driver':trip['driver_ssId'],
-                    'passenger':trip['passenger_ssId'],
+                    'driver':driver_ssId,
+                    'passenger':passenger_ssId,
                     'start':{
                         'address':trip['start'],
                         'timestamp':int(dateutil.parser.parse(trip_times['in_car']).timestamp())},
@@ -110,14 +113,25 @@ class TripsCurrentResource(Resource):
             if (r.status_code != 201):
                 logger.debug(r.json())
                 return r.json(), 500
+            costReport = r.json()['cost']
+            logger.debug(costReport)
             tripRepository.update(trip_id, {
                 'state':'end',
                 'times':trip_times,
                 'travelTime':travel_time,
-                'totalTime':total_time})
-            userRepository.update_ssId(trip['driver_ssId'],{'trip_id':None})
-            userRepository.update_ssId(trip['passenger_ssId'],{'trip_id':None})
-            # TODO: Notify driver, passenger
+                'totalTime':total_time,
+                'cost':costReport})
+            userRepository.update_ssId(driver_ssId,{'trip_id':None})
+            userRepository.update_ssId(passenger_ssId,{'trip_id':None})
+            notification = {
+                    'type':'TRIP_REPORT',
+                    'payload':{
+                        'cost':costReport,
+                        'start':trip['start'],
+                        'end':trip['end'],
+                        'distance':trip['distance']}}
+            fcmRemote.notify(userRepository.find_one_ssId(driver_ssId), notification)
+            fcmRemote.notify(userRepository.find_one_ssId(passenger_ssId), notification)
         logger.info('success')
         return tripRepository.find_one(trip_id), 200
     def delete(self):
