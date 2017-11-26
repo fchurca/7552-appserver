@@ -33,8 +33,8 @@ class TripsCurrentResource(Resource):
         logger.debug(ret)
         logger.info('success')
         return ret, 200
-    def patch(self):
-        logger.info('patch')
+    def post(self):
+        logger.info('post')
         user = Auth.authenticate()
         if (user is None):
             logger.info('wrong username')
