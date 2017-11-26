@@ -87,6 +87,8 @@ class TripsCurrentResource(Resource):
             total_time = (dateutil.parser.parse(trip_times['end']) - dateutil.parser.parse(trip_times['accept'])).total_seconds()
             driver_ssId = trip['driver_ssId']
             passenger_ssId = trip['passenger_ssId']
+            passenger = userRepository.find_one_ssId(passenger_ssId)
+            card = passenger['card']
             r = ssRemote.insertTrip({
                 'trip':{
                     'driver':driver_ssId,
@@ -102,14 +104,14 @@ class TripsCurrentResource(Resource):
                     'totalTime':int(total_time),
                     'waitTime':int(trip['waitTime']),
                     'travelTime':int(travel_time)},
-                'paymethod':{ # TODO: bring from user profile?
+                'paymethod':{
                     'paymethod':'card',
                     'parameters':{
-                        'ccvv':'123',
-                        'expiration_month':'10',
-                        'expiration_year':'2018',
-                        'number':'1234-5678-8765-4321',
-                        'type':'VISA'}}})
+                        'ccvv':str(card['cvc']),
+                        'expiration_month':str(card['month']),
+                        'expiration_year':str(card['year']),
+                        'number':card['number'],
+                        'type':card['brand']}}})
             if (r.status_code != 201):
                 logger.debug(r.json())
                 return r.json(), 500
