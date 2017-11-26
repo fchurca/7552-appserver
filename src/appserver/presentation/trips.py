@@ -60,7 +60,7 @@ class TripsResource(Resource):
             'passenger_ssId':passenger['ssId'],
             'start':content['start'],
             'end':content['end'],
-            'route':[],
+            'route':[content['start']],
             'distance':0})
         if (trip_id is None):
             logger.warn('Trip insert failed')

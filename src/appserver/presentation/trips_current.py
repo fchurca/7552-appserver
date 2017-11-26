@@ -8,11 +8,13 @@ from flask_restful import Resource
 from appserver.applog import LoggerFactory
 from appserver.persistence.mongodb.trip import TripRepository
 from appserver.persistence.mongodb.user import UserRepository
+from appserver.remotes.sharedserver.remote import SharedServerRemote
 from appserver.auth import Auth
 
 logger = LoggerFactory().getLogger('TripsCurrentResource')
 tripRepository = TripRepository()
 userRepository = UserRepository()
+remote = SharedServerRemote()
 
 class TripsCurrentResource(Resource):
     def get(self):
@@ -81,6 +83,33 @@ class TripsCurrentResource(Resource):
             trip_times['end'] = datetime.datetime.now().isoformat()
             travel_time = (dateutil.parser.parse(trip_times['end']) - dateutil.parser.parse(trip_times['in_car'])).total_seconds()
             total_time = (dateutil.parser.parse(trip_times['end']) - dateutil.parser.parse(trip_times['accept'])).total_seconds()
+
+            r = remote.post('trips/', {
+                'trip':{
+                    'driver':trip['driver_ssId'],
+                    'passenger':trip['passenger_ssId'],
+                    'start':{
+                        'address':trip['start'],
+                        'timestamp':int(dateutil.parser.parse(trip_times['in_car']).timestamp())},
+                    'end':{
+                        'address':trip['end'],
+                        'timestamp':int(dateutil.parser.parse(trip_times['end']).timestamp())},
+                    'distance':4200.0/1000.0, #TODO: calculate as float [kilometres]
+                    'route':json.dumps(trip['route']),
+                    'totalTime':int(total_time),
+                    'waitTime':int(trip['waitTime']),
+                    'travelTime':int(travel_time)},
+                'paymethod':{ # TODO: bring from user profile?
+                    'paymethod':'card',
+                    'parameters':{
+                        'ccvv':'123',
+                        'expiration_month':'10',
+                        'expiration_year':'2018',
+                        'number':'1234-5678-8765-4321',
+                        'type':'VISA'}}})
+            if (r.status_code != 201):
+                logger.debug(r.json())
+                return r.json(), 500
             tripRepository.update(trip_id, {
                 'state':'end',
                 'times':trip_times,
