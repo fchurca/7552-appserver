@@ -84,7 +84,7 @@ class TripsCurrentResource(Resource):
             travel_time = (dateutil.parser.parse(trip_times['end']) - dateutil.parser.parse(trip_times['in_car'])).total_seconds()
             total_time = (dateutil.parser.parse(trip_times['end']) - dateutil.parser.parse(trip_times['accept'])).total_seconds()
 
-            r = remote.post('trips/', {
+            r = remote.insertTrip({
                 'trip':{
                     'driver':trip['driver_ssId'],
                     'passenger':trip['passenger_ssId'],
