@@ -100,7 +100,7 @@ class TripsCurrentResource(Resource):
                         'address':trip['end'],
                         'timestamp':int(dateutil.parser.parse(trip_times['end']).timestamp())},
                     'distance':4200.0/1000.0, #TODO: calculate as float [kilometres]
-                    'route':json.dumps(trip['route']),
+                    'route':'X',#json.dumps(trip['route']),
                     'totalTime':int(total_time),
                     'waitTime':int(trip['waitTime']),
                     'travelTime':int(travel_time)},

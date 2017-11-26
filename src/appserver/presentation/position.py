@@ -54,6 +54,7 @@ class PositionResource(Resource):
                 'lat':latitude,
                 'lon':longitude}})
         logger.debug(route)
+        logger.debug(tripRepository.update(trip_id,{'route':route}))
         logger.info('success')
         return data, 200
 

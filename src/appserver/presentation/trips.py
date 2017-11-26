@@ -3,13 +3,15 @@ import flask
 from flask import request
 from flask_restful import Resource
 from appserver.applog import LoggerFactory
+from appserver.auth import Auth
 from appserver.persistence.mongodb.trip import TripRepository
 from appserver.persistence.mongodb.user import UserRepository
-from appserver.auth import Auth
+from appserver.remotes.usig import USIGRemote
 
 logger = LoggerFactory().getLogger('TripsResource')
 tripRepository = TripRepository()
 userRepository = UserRepository()
+usigRemote = USIGRemote()
 
 class TripsResource(Resource):
     def get(self):
@@ -53,13 +55,23 @@ class TripsResource(Resource):
             logger.warn('Passenger already in trip')
             return 'Passenger already in trip', 403
         logger.debug('free passenger')
+        start = content['start']
+        if start['street'] == '':
+            start['street'] = usigRemote.normalizar({
+                'lat':start['location']['lat'],
+                'lng':start['location']['lon']}).json()['direccion']
+        end = content['end']
+        if end['street'] == '':
+            end['street'] = usigRemote.normalizar({
+                'lat':end['location']['lat'],
+                'lng':end['location']['lon']}).json()['direccion']
         trip_id = tripRepository.insert({
             'state':'waiting',
             'times':{'accept':datetime.datetime.now().isoformat()},
             'driver_ssId':driver['ssId'],
             'passenger_ssId':passenger['ssId'],
-            'start':content['start'],
-            'end':content['end'],
+            'start':start,
+            'end':end,
             'route':[content['start']],
             'distance':0})
         if (trip_id is None):
