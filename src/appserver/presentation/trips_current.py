@@ -83,6 +83,7 @@ class TripsCurrentResource(Resource):
             logger.debug('Trip was in car')
             trip_times = trip['times']
             trip_times['end'] = datetime.datetime.now().isoformat()
+            trip['end'] = trip['route'][-1]
             travel_time = (dateutil.parser.parse(trip_times['end']) - dateutil.parser.parse(trip_times['in_car'])).total_seconds()
             total_time = (dateutil.parser.parse(trip_times['end']) - dateutil.parser.parse(trip_times['accept'])).total_seconds()
             driver_ssId = trip['driver_ssId']
@@ -99,7 +100,7 @@ class TripsCurrentResource(Resource):
                     'end':{
                         'address':trip['end'],
                         'timestamp':int(dateutil.parser.parse(trip_times['end']).timestamp())},
-                    'distance':4200.0/1000.0, #TODO: calculate as float [kilometres]
+                    'distance':trip['distance']/1000.0,
                     'route':'X',#json.dumps(trip['route']),
                     'totalTime':int(total_time),
                     'waitTime':int(trip['waitTime']),
@@ -118,6 +119,7 @@ class TripsCurrentResource(Resource):
             costReport = r.json()['cost']
             logger.debug(costReport)
             tripRepository.update(trip_id, {
+                'end':trip['end'],
                 'state':'end',
                 'times':trip_times,
                 'travelTime':travel_time,

@@ -1,6 +1,7 @@
 import flask
 from flask import request
 from flask_restful import Resource
+from geopy.distance import vincenty
 from appserver.applog import LoggerFactory
 from appserver.auth import Auth
 from appserver.persistence.mongodb.user import UserRepository
@@ -11,6 +12,8 @@ logger = LoggerFactory().getLogger('PositionResource')
 userRepository = UserRepository()
 tripRepository = TripRepository()
 usigRemote = USIGRemote()
+
+MINIMUM_STEP=100
 
 class PositionResource(Resource):
     def post(self):
@@ -43,18 +46,30 @@ class PositionResource(Resource):
             logger.info('Trip not in_car')
             return data, 200
         logger.info('Trip in_car')
+        route = trip['route']
+        lastDistance=trip['distance']
+        lastPosition=route[-1]['location']
+        step = vincenty((latitude, longitude), (lastPosition['lat'], lastPosition['lon'])).meters
+        if step < MINIMUM_STEP:
+            logger.info('short step')
+            return data, 200
+        distance = lastDistance + step
+        logger.debug(step)
+        logger.debug(distance)
         street = usigRemote.normalizar({
             'lat':latitude,
             'lng':longitude}).json()['direccion']
         logger.debug(street)
-        route = trip['route']
+        del route[-1]['street']
         route.append({
             'street':street,
             'location':{
                 'lat':latitude,
                 'lon':longitude}})
         logger.debug(route)
-        logger.debug(tripRepository.update(trip_id,{'route':route}))
+        logger.debug(tripRepository.update(trip_id,{
+            'distance':distance,
+            'route':route}))
         logger.info('success')
         return data, 200
 

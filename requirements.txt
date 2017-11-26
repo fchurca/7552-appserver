@@ -6,3 +6,4 @@ python-dateutil
 requests
 coverage
 captain-pycard
+geopy
