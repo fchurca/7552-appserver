@@ -1,4 +1,5 @@
 import flask
+from datetime import datetime
 from flask import request
 from flask_restful import Resource
 from geopy.distance import vincenty
@@ -27,10 +28,12 @@ class PositionResource(Resource):
         latitude = content['latitude']
         longitude = content['longitude']
         username = user['username']
+        timestamp = str(datetime.now())
         data={
                 'position':{
                     'latitude':latitude,
-                    'longitude':longitude}}
+                    'longitude':longitude},
+                'time':timestamp}
         logger.debug(data)
         if not userRepository.update(username, data):
             return "There was an error processing the request", 500
@@ -41,6 +44,10 @@ class PositionResource(Resource):
         logger.info('User in trip')
         trip_id = user['trip_id']
         trip = tripRepository.find_one(trip_id)
+        logger.debug(trip)
+        if trip['passenger_ssId'] != user['ssId']:
+            logger.info('User not trip passenger')
+            return data, 200
         logger.debug(trip)
         if trip['state'] != 'in_car':
             logger.info('Trip not in_car')
