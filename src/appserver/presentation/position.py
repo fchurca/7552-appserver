@@ -72,7 +72,8 @@ class PositionResource(Resource):
             'street':street,
             'location':{
                 'lat':latitude,
-                'lon':longitude}})
+                'lon':longitude},
+            'timestamp':timestamp})
         logger.debug(route)
         logger.debug(tripRepository.update(trip_id,{
             'distance':distance,

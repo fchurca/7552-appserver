@@ -126,6 +126,14 @@ class SharedServerRemote(object):
         logger.debug(data)
         return self.put('users/{}/cars/{}'.format(ssUserId, data['id']),data)
 
+    def estimateTrip(self, ssId, start, end):
+        logger.info('estimateTrip')
+        data = {'start': {'address': {'location': start}},
+                'end': {'address': {'location': end}},
+                'passenger': ssId}
+        logger.debug(data)
+        return self.post('trips/estimate/', data)
+
     def insertTrip(self, data):
         logger.info('insertTrip')
         logger.debug(data)

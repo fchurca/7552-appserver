@@ -1,6 +1,7 @@
 from flask import request
 from flask_restful import Resource
 from appserver.applog import LoggerFactory
+from appserver.auth import Auth
 from appserver.persistence.mongodb.user import UserRepository
 from appserver.remotes.sharedserver import SharedServerRemote
 
@@ -21,6 +22,19 @@ def getOrDefault(key, array, default=None):
 class DriversResource(Resource):
     def get(self):
         logger.info('method:GET')
+        user = Auth.authenticate()
+        if (user is None):
+            logger.info('wrong username')
+            return 'Wrong username and/or password', 401
+        logger.info('Existing user')
+        if user['type'] != 'passenger':
+            logger.info('User not a passenger')
+            return 'User not a passenger', 403
+        logger.info('Existing passenger')
+        if 'position' not in user:
+            logger.info('User doesnt have position yet')
+            return [], 200
+        position = user['position']
         # TODO: filter by position
         rets=list(repository.find({'type':'driver'}))
         drivers = []
