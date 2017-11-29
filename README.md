@@ -1,6 +1,5 @@
 # Python Application Server
 
-* [Master](https://github.com/fchurca/7552-appserver)
 * [![Build Status](https://travis-ci.org/fchurca/7552-appserver.svg?branch=master)](https://travis-ci.org/fchurca/7552-appserver)
 * [![Coverage Status](https://coveralls.io/repos/github/fchurca/7552-appserver/badge.svg)](https://coveralls.io/github/fchurca/7552-appserver)|
 
@@ -125,8 +124,8 @@ gunicorn --workers 4 appserver:app
 
 ## Generating Doxygen Documentation
 ```
-appserver$ apt-get install doxygen graphviz
-appserver$ doxygen
+apt-get install doxygen graphviz
+doxygen
 ```
 HTML documentation will be placed inside the docs/generated directory.
 
