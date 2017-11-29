@@ -4,16 +4,16 @@
 * [![Coverage Status](https://coveralls.io/repos/github/fchurca/7552-appserver/badge.svg)](https://coveralls.io/github/fchurca/7552-appserver)|
 
 ## Associated Acts
-* [Heroku Dashboard](https://dashboard.heroku.com/teams/tallerii-7552-20172-g3) (you are logged in, aren't you?)
+* Heroku Dashboard: https://dashboard.heroku.com/teams/tallerii-7552-20172-g3 (you are logged in, aren't you?)
 
 * Master repositories
-    * Android client: [https://github.com/smaraggi/HG-android-client/network]
-    * Appserver (this repo): [https://github.com/fchurca/7552-appserver]
-    * Shared server: [https://github.com/florrup/sharedserver]
+    * Android client: https://github.com/smaraggi/HG-android-client/network
+    * Appserver (this repo): https://github.com/fchurca/7552-appserver
+    * Shared server: https://github.com/florrup/sharedserver
 
 ## Useful links
-* [Subject site](http://7552.fi.uba.ar/)
-* [Assignment](https://github.com/taller-de-programacion-2/taller-de-programacion-2.github.io/blob/master/trabajo-practico/enunciados/2017/2/llevame.md)
+* Subject site: http://7552.fi.uba.ar/
+* Assignment: https://github.com/taller-de-programacion-2/taller-de-programacion-2.github.io/blob/master/trabajo-practico/enunciados/2017/2/llevame.md
 
 ## Dependencies
 For a Docker server on Debian:
@@ -51,15 +51,15 @@ More elaborate setups may arise. In that case, refer to the following sections.
 
 ## Deploying to Heroku
 To deploy to Heroku simply push the contents of the source directory into the Heroku repository.
-For details and specifics, goto [https://devcenter.heroku.com/articles/git].
-We have found it useful to use pipelines and Github Sync: [https://devcenter.heroku.com/articles/pipelines]
+For details and specifics, goto https://devcenter.heroku.com/articles/git
+We have found it useful to use pipelines and Github Sync: https://devcenter.heroku.com/articles/pipelines
 
 ## Configuration
 The following environment variables need to be set:
 * `APPSERVER_CFG` Location for configuration files, relative to the root of the project.
 * `SHAREDSERVER_URL` Shared Server URL (default, variable name in `$APPSERVER_CFG/sharedserver.ini`)
 * `SHAREDSERVER_TOKEN` Initial Shared Server token
-* `MONGODB_URI` MongoDB URI (default, fariable name in `$APPSERVER_CFG/mongo.ini`)
+* `MONGODB_URI` MongoDB URI (default, variable name in `$APPSERVER_CFG/mongo.ini`)
 * `FCM_API_KEY` Firebase Cloud Messaging key
 
 ### Shared Server
@@ -97,7 +97,7 @@ Logging is configured in `$APPSERVER_CFG/mongo.ini`. Example:
 level=DEBUG
 format=[%%(asctime)s] [%%(process)d] [%%(levelname)s] %%(name)s - %%(message)s
 ```
-For more information regarding Python 3 logging and logging formats, see: [https://docs.python.org/3/library/logging.html]
+For more information regarding Python 3 logging and logging formats, see: https://docs.python.org/3/library/logging.html
 
 
 ## Building Redistributable Package
