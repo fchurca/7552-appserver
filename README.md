@@ -2,7 +2,7 @@
 An application server for Llevame written in Python
 
 * [![Build Status](https://travis-ci.org/fchurca/7552-appserver.svg?branch=master)](https://travis-ci.org/fchurca/7552-appserver)
-* [![Coverage Status](https://coveralls.io/repos/github/fchurca/7552-appserver/badge.svg)](https://coveralls.io/github/fchurca/7552-appserver)|
+* [![Coverage Status](https://coveralls.io/repos/github/fchurca/7552-appserver/badge.svg)](https://coveralls.io/github/fchurca/7552-appserver)
 
 ## Associated Acts
 * Heroku Dashboard: https://dashboard.heroku.com/teams/tallerii-7552-20172-g3 (you are logged in, aren't you?)
