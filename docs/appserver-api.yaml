@@ -1,197 +1,473 @@
 swagger: '2.0'
 info:
-    version: 0.1.0
-    title: Llevame
-    description: >
-        TODO
-host: url.goes.here
-basepath: /v0
+  description: API para el app server de Llevame
+  title: Llevame - App Server API
+  version: 1.0.0
+host: tallerii-7552-appserver.herokuapp.com
+schemes: [https]
+basePath: /
+consumes: [application/json]
+produces: [application/json]
 securityDefinitions:
-    apikey:
-        type: apikey
-        name: appserver_token
-        in: query
-schemes:
-    - https
-    - http
-consumes:
-    - application/json
-produces:
-    - application/json
+  ApplicationToken:
+    type: apiKey
+    in: header
+    name: Authorization
+tags:
+  - name: driver
+    description: "Llamados que pueden realizar los usuarios de tipo conductor"
+  - name: passenger
+    description: "Llamados que pueden realizar los usuarios de tipo pasajero"
+  - name: profile
+    description: "Llamados relacionados a datos de perfiles"
+  - name: trip
+    description: "Llamados relacionados a datos de viajes"
 paths:
-    /drivers:
-        get:
-            summary: List nearby drivers
-            operationId: listDrivers
-            tags:
-                - passengers
-                - drivers
-    /trips:
-        get:
-            summary: List nearby trips
-            operationId: listTrips
-
-            security:
-                - apikey: []
-            tags:
-                - Trips
-                - Drivers
-            responses:
-                "200":
-                    schema:
-                        type: array
-                        items:
-                            $ref: '#definitions/Trip'
-        put:
-            summary: Place a trip
-            operationId: placeTrip
-            tags:
-                - trips
-                - passengers
-            parameters:
-                - name: passengerId
-                  in: query
-                  required: true
-                  type: integer
-                  format: int64
-                - name: driverId
-                  in: query
-                  required: true
-                  type: integer
-                  format: int64
-                - name: start
-                  in: query
-                  required: true
-                  type:
-                      $ref: '#definitions/Waypoint'
-                - name: end
-                  in: query
-                  required: true
-                  type:
-                      $ref: '#definitions/Waypoint'
-                - name: route
-                  in: query
-                  required: false
-                  type: array
-                  items:
-                      $ref: '#definitions/Waypoint'
-            security:
-                - apikey: []
-        patch:
-            summary: Edit trip
-            operationId: editTrip
-            tags:
-                - trips
-                - passengers
-                - drivers
-            parameters:
-                - name: tripId
-                  in: query
-                  required: true
-                  type: integer
-                  format: int64
-                - name: state
-                  in: query
-                  required: true
-                  type: string
-            security:
-                - apikey: []
-        post:
-            summary: Post comment on trip
-            operationId: commentTrip
-            tags:
-                - trips
-                - passengers
-                - drivers
-            parameters:
-                - name: tripId
-                  in: query
-                  required: true
-                  type: integer
-                  format: int64
-                - name: message
-                  in: query
-                  required: true
-                  type: string
-            security:
-                - apikey []
-
+  /user:
+    get:
+      tags:
+        - profile
+        - driver
+        - passenger
+      security:
+        - ApplicationToken: []
+      description: "Devuelve la información del perfil del usuario en sesión"
+      responses:
+        200:
+          description: "Perfil del usuario"
+          schema:
+            $ref: '#/definitions/UserRetrievedProfile'
+        401:
+          description: Unauthorized
+        500:
+          description: "Unexpected error"
+      summary: "Perfil de usuario"
+    post:
+      tags:
+        - profile
+        - driver
+        - passenger
+      description: "Actualiza la información del perfil del usuario en sesión"
+      parameters:
+        - name: body
+          in: body
+          schema:
+            $ref: '#/definitions/UserUpdatePayload'
+      responses:
+        200:
+          description: "Perfil del usuario"
+          schema:
+            $ref: '#/definitions/UserRetrievedProfile'
+        401:
+          description: Unauthorized
+        500:
+          description: "Unexpected error"
+      summary: "Actualización o alta de usuario"
+  /token:
+    post:
+      tags:
+        - profile
+        - driver
+        - passenger
+      parameters:
+        - name: body
+          in: body
+          schema:
+            $ref: '#/definitions/UserLoginCredentials'
+      responses:
+        202:
+          description: "Success: session token"
+          schema:
+            properties:
+              token:
+                $ref: '#/securityDefinitions/ApplicationToken'
+        401:
+          description: "Wrong username or password"
+        500:
+          description: "Server error"
+      summary: "Inicio de sesión"
+    delete:
+      security:
+        - ApplicationToken: []
+      tags:
+        - profile
+        - driver
+        - passenger
+      responses:
+        202:
+          description: "Success"
+        401:
+          description: "Wrong username or password"
+        500:
+          description: "Server error"
+      summary: "Fin de sesión"
+  /position:
+    post:
+      security:
+        - ApplicationToken: []
+      tags:
+        - profile
+        - trip
+        - driver
+        - passenger
+      parameters:
+        - name: body
+          in: body
+          schema:
+            $ref: '#/definitions/LatitudeLongitude'
+      responses:
+        200:
+          description: "Success"
+        401:
+          description: Unauthorized
+        500:
+          description: "Unexpected error"
+      summary: "Actualización de posición"
+  /notifications:
+    post:
+      security:
+        - ApplicationToken: []
+      tags:
+        - profile
+        - driver
+        - passenger
+      parameters:
+        - name: body
+          in: body
+          schema:
+            properties:
+              userId:
+                $ref: '#/definitions/Id'
+              type:
+                type: string
+              payload:
+                type: object
+      responses:
+        200:
+          description: "Success"
+        401:
+          description: Unauthorized
+        500:
+          description: "Unexpected error"
+      summary: "Envío de mensajes entre usuarios"
+  /notifications/token:
+    post:
+      security:
+        - ApplicationToken: []
+      tags:
+        - profile
+        - driver
+        - passenger
+      parameters:
+        - name: body
+          in: body
+          schema:
+            properties:
+              token:
+                type: string
+      responses:
+        200:
+          description: "Success"
+        401:
+          description: Unauthorized
+        500:
+          description: "Unexpected error"
+      summary: "Actualización de token de FCM del usuario"
+  /trips:
+    post:
+      security:
+        - ApplicationToken: []
+      tags:
+        - trip
+        - driver
+      parameters:
+        - name: body
+          in: body
+          schema:
+            properties:
+              passenger:
+                $ref: '#/definitions/Id'
+              start:
+                $ref: '#/definitions/StreetLocation'
+              end:
+                $ref: '#/definitions/StreetLocation'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/ProfileTrip'
+        401:
+          description: Unauthorized
+        500:
+          description: "Unexpected error"
+      summary: 'Alta de viaje'
+  /trips/estimate:
+    post:
+      security:
+        - ApplicationToken: []
+      tags:
+        - trip
+        - passenger
+      parameters:
+        - name: body
+          in: body
+          schema:
+            properties:
+              start:
+                $ref: '#/definitions/LatLon'
+              end:
+                $ref: '#/definitions/LatLon'
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/CostReport'
+      summary: "Estimación de costo de viaje"
+  /trips/current:
+    get:
+      security:
+        - ApplicationToken: []
+      tags:
+        - trip
+        - driver
+        - passenger
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/ProfileTrip'
+        401:
+          description: Unauthorized
+        500:
+          description: "Unexpected error"
+      summary: "Viaje en curso"
+    post:
+      security:
+        - ApplicationToken: []
+      tags:
+        - trip
+        - driver
+        - passenger
+      parameters: 
+        - name: body
+          in: body
+          schema:
+            properties:
+              state:
+                type: string
+                enum:
+                  - "IN_CAR"
+                  - "END"
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/ProfileTrip'
+        401:
+          description: Unauthorized
+        500:
+          description: "Unexpected error"
+      summary: "Actualizaciones de viaje"
+    delete:
+      security:
+        - ApplicationToken: []
+      tags:
+        - trip
+        - driver
+        - passenger
+      responses:
+        200:
+          description: Success
+        401:
+          description: Unauthorized
+        500:
+          description: "Unexpected error"
+      summary: "Cancelación de viaje"
 definitions:
-    User:
-        title: 'User'
-        type: object
-        required:
-            - userId
-            - username
-            - fullname
+  Id:
+    type: string
+    description: Identificador
+  Username:
+    type: string
+    description: Nombre de usuario para inicio de sesión
+  Password:
+    type: string
+    format: password
+    description: Contraseña de usuario
+  Email:
+    type: string
+    format: email
+    description: Dirección de correo electrónico de usuario
+  UserType:
+    type: string
+    enum:
+      - passenger
+      - driver
+    description: Tipos posibles de usuario
+  UpdateCard:
+    properties:
+      number:
+        type: string
+      expirationDate:
+        type: string
+      cvc:
+        type: string
+    description: Tarjeta de crédito para actualización
+  ProfileCard:
+    properties:
+      number:
+        type: string
+      expirationDate:
+        type: string
+      cvc:
+        type: string
+      month:
+        type: number
+      year:
+        type: number
+      brand:
+        type: string
+    description: Tarjeta de crédito en perfil
+  FacebookAuthToken:
+    type: string
+    description: Token de autenticación de Facebook
+  ProfileCar:
+    properties:
+      id:
+        $ref: '#/definitions/Id'
+      model:
+        type: string
+      patent:
+        type: string
+    description: Auto
+  ProfileCarCollection:
+    type: array
+    items:
+      $ref: '#/definitions/ProfileCar'
+    description: Colección de autos
+  UserLoginCredentials:
+    properties:
+      username:
+        $ref: '#/definitions/Username'
+      password:
+        $ref: '#/definitions/Password'
+      facebookAuthToken:
+        $ref: '#/definitions/FacebookAuthToken'
+    description: Credenciales de acceso; o username y password, o facebookAuthToken
+  StreetLocation:
+    properties:
+      street:
+        type: string
+      location:
         properties:
-            userId:
-                type: integer
-                format: int64
-            username:
-                type: string
-            fullname:
-                type: string
-    Comment:
-        title: 'Comment'
-        type: object
-        required:
-            - userId
-            - tripId
-            - message
+          lat:
+            type: number
+          lon:
+            type: number
+    description: Locación con dirección de calle
+  LatitudeLongitude:
+    properties:
+      latitude:
+        type: number
+      longitude:
+        type: number
+    description: Locación como latitude, longitude
+  LatLon:
+    properties:
+      lat:
+        type: number
+      lon:
+        type: number
+    description: Locación como lat, lon
+  UserUpdatePayload:
+    properties:
+      username:
+        $ref: '#/definitions/Username'
+      password:
+        $ref: '#/definitions/Password'
+      email:
+        $ref: '#/definitions/Email'
+      type:
+        $ref: '#/definitions/UserType'
+      firstName:
+        type: string
+      lastName:
+        type: string
+      country:
+        type: string
+      birthdate:
+        type: string
+        format: date
+      card:
+        $ref: '#/definitions/UpdateCard'
+      cars:
+        $ref: '#/definitions/ProfileCarCollection'
+  UserRetrievedProfile:
+    properties:
+      balance:
+        type: number
+      firstName:
+        type: string
+      lastName:
+        type: string
+      username:
+        $ref: '#/definitions/Username'
+      type:
+        $ref: '#/definitions/UserType'
+      email:
+        $ref: '#/definitions/Email'
+      birthdate:
+        type: string
+        format: full-date
+      country:
+        type: string
+      facebookUserId:
+        type: string
+      id:
+        type: string
+      card:
+        $ref: '#/definitions/ProfileCard'
+      cars:
+        $ref: '#/definitions/ProfileCarCollection'
+    description: Información de usuario devuelta por el servidor
+  CostReport:
+    properties:
+      currency:
+        type: string
+      value:
+        type: number
+    description: Resumen de costo del viaje
+  ProfileTrip:
+    properties:
+      times:
         properties:
-            tripId:
-                type: integer
-                format: int64
-            userId:
-                type: integer
-                format: int64
-            message:
-                type: string
-    Waypoint:
-        title: 'Waypoint'
-        type: object
-        required:
-            - latitude
-            - longitude
-        properties:
-            latitude:
-                  type: number
-                  format: double
-            longitude:
-                  type: number
-                  format: double
-    Trip:
-        title: 'Trip'
-        type: object
-        required:
-            - tripId
-            - passengerId
-            - driverId
-            - state
-        properties:
-            tripId:
-                type: integer
-                format: int64
-            passengerId:
-                type: integer
-                format: int64
-            driverId:
-                type: integer
-                format: int64
-            start:
-                $ref: '#definitions/Waypoint'
-            end:
-                $ref: '#definitions/Waypoint'
-            route:
-                type: array
-                items:
-                    $ref: '#definitions/Waypoint'
-            state:
-                type: string
-            comments:
-                type: array
-                items:
-                    $ref: '#definitions/Comment'
-
+          accept:
+            type: string
+            format: date-time
+          in_car:
+            type: string
+            format: date-time
+          end:
+            type: string
+            format: date-time
+      distance:
+        type: number
+      passenger_ssId:
+        $ref: '#/definitions/Id'
+      driver_ssId:
+        $ref: '#/definitions/Id'
+      state:
+        type: string
+        enum:
+          - waiting
+          - in_car
+          - end
+      start:
+        $ref: '#/definitions/StreetLocation'
+      end:
+        $ref: '#/definitions/StreetLocation'
+      route:
+        items:
+          $ref: '#/definitions/StreetLocation'
+    description: Información de viaje devuelta por el servidor
 
