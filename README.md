@@ -134,7 +134,8 @@ gunicorn --workers 4 appserver:app
 In order to make this daemon bulletproof, several improvements can be made. Namely:
 * Use of USIG can be replaced by calls to Google or OpenStreetMap in order to infer street addresses outside of Buenos Aires.
 * A back office module can be implemented, or an administration API to be exposed to the SharedServer backoffice.
-* The position of the passenger is tracked during the trip in order to calculate distance. However, the raw positions as informed by the passenger are used. This can result in unexpectedly high costs if the positions jump around. The datapoints can be smoothed out with LOESS and outlier filtering, either by local variance or by position error. Or with LOWESS weighted by (π/2)-arctan(error). Or something.
+* The position of the passenger is tracked during the trip in order to calculate distance. However, the raw positions as informed by the passenger are used. This can result in unexpectedly high costs if the positions jump around. The datapoints can be smoothed out with LOESS and outlier filtering, either by local variance or by position error. Or with LOWESS weighted by (π/2)-arctan(error). Or some nonlinear regression algorithm or other. Or something.
+* The deployment methods described use a static number of worker processes. Means to ensure an on-demand elastic deployment of daemons can be realised.
 * Even more testing. There's never enough testing.
 
 ## Generating Doxygen Documentation
