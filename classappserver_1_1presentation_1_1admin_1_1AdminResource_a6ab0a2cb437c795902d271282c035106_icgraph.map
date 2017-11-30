@@ -1,0 +1,8 @@
+<map id="appserver.presentation.admin.AdminResource.post" name="appserver.presentation.admin.AdminResource.post">
+<area shape="rect" id="node2" href="$classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a4c363b163f22275b2a60633b90f9411a" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertUser" alt="" coords="278,5,491,47"/>
+<area shape="rect" id="node3" href="$classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a81af310ebf4f864dab172cd6b403f6ac" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertFacebookUser" alt="" coords="251,71,519,112"/>
+<area shape="rect" id="node4" href="$classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a0d8ea9da2c9be1ab03fda6a7a374c7ad" title="appserver.remotes.sharedserver.\lSharedServerRemote.validateUser" alt="" coords="273,136,497,177"/>
+<area shape="rect" id="node5" href="$classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#acc2fd401bb110d2fc345b02dff20c85a" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertCar" alt="" coords="278,201,491,243"/>
+<area shape="rect" id="node6" href="$classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ae1ba75b5d658968e610683f1e40d1592" title="appserver.remotes.sharedserver.\lSharedServerRemote.estimateTrip" alt="" coords="273,267,496,308"/>
+<area shape="rect" id="node7" href="$classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ab64b673665a2446e53feea7df2f43788" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertTrip" alt="" coords="278,332,491,373"/>
+</map>

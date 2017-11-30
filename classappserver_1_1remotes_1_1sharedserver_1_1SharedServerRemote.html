@@ -1,0 +1,816 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>PyAppServer: Referencia de la Clase appserver.remotes.sharedserver.SharedServerRemote</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">PyAppServer
+   </div>
+   <div id="projectbrief">Application Server en Python para Taller de Prog 2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase appserver.remotes.sharedserver.SharedServerRemote</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de appserver.remotes.sharedserver.SharedServerRemote</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote__inherit__graph.png" border="0" usemap="#appserver_8remotes_8sharedserver_8SharedServerRemote_inherit__map" alt="Inheritance graph"/></div>
+</div>
+<div class="dynheader">
+Diagrama de colaboración para appserver.remotes.sharedserver.SharedServerRemote:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote__coll__graph.png" border="0" usemap="#appserver_8remotes_8sharedserver_8SharedServerRemote_coll__map" alt="Collaboration graph"/></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:aaf979c939291174bbfaf5665974673b1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#aaf979c939291174bbfaf5665974673b1">__init__</a></td></tr>
+<tr class="separator:aaf979c939291174bbfaf5665974673b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf15d60be7f5f9b076b9a86dc0ff1181"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181">request</a></td></tr>
+<tr class="separator:adf15d60be7f5f9b076b9a86dc0ff1181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f7bc60621787d55e87cdf2b679857c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a36f7bc60621787d55e87cdf2b679857c">get</a></td></tr>
+<tr class="separator:a36f7bc60621787d55e87cdf2b679857c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95dde45926157018a9960f24c771ea41"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a95dde45926157018a9960f24c771ea41">post</a></td></tr>
+<tr class="separator:a95dde45926157018a9960f24c771ea41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ba44a09f48c76558dcfbe54d10534a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a22ba44a09f48c76558dcfbe54d10534a">put</a></td></tr>
+<tr class="separator:a22ba44a09f48c76558dcfbe54d10534a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c363b163f22275b2a60633b90f9411a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a4c363b163f22275b2a60633b90f9411a">insertUser</a></td></tr>
+<tr class="separator:a4c363b163f22275b2a60633b90f9411a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81af310ebf4f864dab172cd6b403f6ac"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a81af310ebf4f864dab172cd6b403f6ac">insertFacebookUser</a></td></tr>
+<tr class="separator:a81af310ebf4f864dab172cd6b403f6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1e4cb0e75847e983918760c81a6d3e5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#af1e4cb0e75847e983918760c81a6d3e5">getUser</a></td></tr>
+<tr class="separator:af1e4cb0e75847e983918760c81a6d3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d8ea9da2c9be1ab03fda6a7a374c7ad"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a0d8ea9da2c9be1ab03fda6a7a374c7ad">validateUser</a></td></tr>
+<tr class="separator:a0d8ea9da2c9be1ab03fda6a7a374c7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bed9e55d191507792f985a8621ac7ef"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a7bed9e55d191507792f985a8621ac7ef">updateUser</a></td></tr>
+<tr class="separator:a7bed9e55d191507792f985a8621ac7ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6497915bc283df38b03af617bab98f86"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a6497915bc283df38b03af617bab98f86">getCars</a></td></tr>
+<tr class="separator:a6497915bc283df38b03af617bab98f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc2fd401bb110d2fc345b02dff20c85a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#acc2fd401bb110d2fc345b02dff20c85a">insertCar</a></td></tr>
+<tr class="separator:acc2fd401bb110d2fc345b02dff20c85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7463c2a1cecc9e1eb960418e723a73d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ad7463c2a1cecc9e1eb960418e723a73d">updateCar</a></td></tr>
+<tr class="separator:ad7463c2a1cecc9e1eb960418e723a73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1ba75b5d658968e610683f1e40d1592"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ae1ba75b5d658968e610683f1e40d1592">estimateTrip</a></td></tr>
+<tr class="separator:ae1ba75b5d658968e610683f1e40d1592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64b673665a2446e53feea7df2f43788"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ab64b673665a2446e53feea7df2f43788">insertTrip</a></td></tr>
+<tr class="separator:ab64b673665a2446e53feea7df2f43788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a14503a2bfc1286b929f9c0de6078c11e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a14503a2bfc1286b929f9c0de6078c11e">headers</a></td></tr>
+<tr class="separator:a14503a2bfc1286b929f9c0de6078c11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00055">55</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="aaf979c939291174bbfaf5665974673b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00056">56</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="ae1ba75b5d658968e610683f1e40d1592"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.estimateTrip </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ssId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00129">129</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ae1ba75b5d658968e610683f1e40d1592_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ae1ba75b5d658968e610683f1e40d1592_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ae1ba75b5d658968e610683f1e40d1592_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ae1ba75b5d658968e610683f1e40d1592_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1presentation_1_1admin_1_1AdminResource.html#a6ab0a2cb437c795902d271282c035106" title="appserver.presentation.admin.\lAdminResource.post" alt="" coords="309,5,507,47"/><area shape="rect" id="node3" href="classappserver_1_1presentation_1_1notifications_1_1NotificationsResource.html#a96271b9736332dd4793a40a835a23bb5" title="appserver.presentation.notifications.\lNotificationsResource.post" alt="" coords="292,71,524,112"/><area shape="rect" id="node4" href="classappserver_1_1presentation_1_1notificationstoken_1_1NotificationsTokenResource.html#af320336515c69bf824c201777b1280f5" title="appserver.presentation.notificationstoken.\lNotificationsTokenResource.post" alt="" coords="276,136,540,177"/><area shape="rect" id="node5" href="classappserver_1_1presentation_1_1position_1_1PositionResource.html#a49073c40a8aade7eef74fd884dc33542" title="appserver.presentation.position.\lPositionResource.post" alt="" coords="305,201,511,243"/><area shape="rect" id="node6" href="classappserver_1_1presentation_1_1token_1_1TokenResource.html#a194f121de42fdad82c9068532923f2e5" title="appserver.presentation.token.\lTokenResource.post" alt="" coords="311,267,505,308"/><area shape="rect" id="node7" href="classappserver_1_1presentation_1_1trips_1_1TripsResource.html#a7d224c430da5af94d970d7d37eabaa35" title="appserver.presentation.trips.\lTripsResource.post" alt="" coords="315,332,501,373"/><area shape="rect" id="node8" href="classappserver_1_1presentation_1_1trips__current_1_1TripsCurrentResource.html#afa82a0ec3c6048ce2a6ee471cab39a16" title="appserver.presentation.trips\l_current.TripsCurrentResource.post" alt="" coords="293,397,523,439"/><area shape="rect" id="node9" href="classappserver_1_1presentation_1_1trips__estimate_1_1TripsEstimateResource.html#a8525771bd3b7fadab0b76cd75f60e5b1" title="appserver.presentation.trips\l_estimate.TripsEstimateResource.post" alt="" coords="283,463,533,504"/><area shape="rect" id="node10" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#a3448dd623a502655762d39cc883fa6d4" title="appserver.presentation.user.\lUserResource.post" alt="" coords="315,528,501,569"/><area shape="rect" id="node12" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a95dde45926157018a9960f24c771ea41" title="appserver.remotes.sharedserver.\lSharedServerRemote.post" alt="" coords="301,593,515,635"/><area shape="rect" id="node11" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#afd674956901f2ca676f4f19459a1f023" title="appserver.presentation.user.\lUserResource._get" alt="" coords="601,528,788,569"/><area shape="rect" id="node13" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="588,593,801,635"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a36f7bc60621787d55e87cdf2b679857c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.get </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00069">69</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a36f7bc60621787d55e87cdf2b679857c_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a36f7bc60621787d55e87cdf2b679857c_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a36f7bc60621787d55e87cdf2b679857c_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a36f7bc60621787d55e87cdf2b679857c_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="267,5,480,47"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a36f7bc60621787d55e87cdf2b679857c_icgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a36f7bc60621787d55e87cdf2b679857c_icgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a36f7bc60621787d55e87cdf2b679857c_icgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a36f7bc60621787d55e87cdf2b679857c_icgraph">
+<area shape="rect" id="node2" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#af1e4cb0e75847e983918760c81a6d3e5" title="appserver.remotes.sharedserver.\lSharedServerRemote.getUser" alt="" coords="267,5,480,47"/><area shape="rect" id="node3" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a6497915bc283df38b03af617bab98f86" title="appserver.remotes.sharedserver.\lSharedServerRemote.getCars" alt="" coords="267,71,480,112"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6497915bc283df38b03af617bab98f86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.getCars </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ssId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00115">115</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a6497915bc283df38b03af617bab98f86_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a6497915bc283df38b03af617bab98f86_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a6497915bc283df38b03af617bab98f86_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a6497915bc283df38b03af617bab98f86_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1configuration_1_1ini_1_1IniFile.html#a5c047d73714a5c3048196ccf614f2e79" title="appserver.configuration.ini.\lIniFile.get" alt="" coords="289,5,467,47"/><area shape="rect" id="node4" href="classappserver_1_1presentation_1_1drivers_1_1DriversResource.html#a877634edce254a05bfe16af8159da6b3" title="appserver.presentation.drivers.\lDriversResource.get" alt="" coords="277,71,479,112"/><area shape="rect" id="node6" href="classappserver_1_1presentation_1_1trips_1_1TripsResource.html#a8e42ba1bba4fa6bb62b7204f9f8e1115" title="appserver.presentation.trips.\lTripsResource.get" alt="" coords="285,136,471,177"/><area shape="rect" id="node7" href="classappserver_1_1presentation_1_1trips__current_1_1TripsCurrentResource.html#aad8c972c263ffa4b8d1c1752186baf59" title="appserver.presentation.trips\l_current.TripsCurrentResource.get" alt="" coords="267,201,489,243"/><area shape="rect" id="node8" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#a388674590d285548b83a14b5f365dc52" title="appserver.presentation.user.\lUserResource.get" alt="" coords="285,267,471,308"/><area shape="rect" id="node10" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a36f7bc60621787d55e87cdf2b679857c" title="appserver.remotes.sharedserver.\lSharedServerRemote.get" alt="" coords="271,332,485,373"/><area shape="rect" id="node3" href="classappserver_1_1configuration_1_1ini_1_1IniFile.html#a146337e577f8b53fa947860d66953d52" title="appserver.configuration.ini.\lIniFile.has" alt="" coords="557,5,736,47"/><area shape="rect" id="node5" href="namespaceappserver_1_1presentation_1_1drivers.html#af8c68a9120b40a87e07a15fedc0f4920" title="appserver.presentation.drivers.get\lOrDefault" alt="" coords="537,71,756,112"/><area shape="rect" id="node9" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#afd674956901f2ca676f4f19459a1f023" title="appserver.presentation.user.\lUserResource._get" alt="" coords="553,267,740,308"/><area shape="rect" id="node11" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="540,332,753,373"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af1e4cb0e75847e983918760c81a6d3e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.getUser </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ssId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00103">103</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_af1e4cb0e75847e983918760c81a6d3e5_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_af1e4cb0e75847e983918760c81a6d3e5_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_af1e4cb0e75847e983918760c81a6d3e5_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_af1e4cb0e75847e983918760c81a6d3e5_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1configuration_1_1ini_1_1IniFile.html#a5c047d73714a5c3048196ccf614f2e79" title="appserver.configuration.ini.\lIniFile.get" alt="" coords="289,5,467,47"/><area shape="rect" id="node4" href="classappserver_1_1presentation_1_1drivers_1_1DriversResource.html#a877634edce254a05bfe16af8159da6b3" title="appserver.presentation.drivers.\lDriversResource.get" alt="" coords="277,71,479,112"/><area shape="rect" id="node6" href="classappserver_1_1presentation_1_1trips_1_1TripsResource.html#a8e42ba1bba4fa6bb62b7204f9f8e1115" title="appserver.presentation.trips.\lTripsResource.get" alt="" coords="285,136,471,177"/><area shape="rect" id="node7" href="classappserver_1_1presentation_1_1trips__current_1_1TripsCurrentResource.html#aad8c972c263ffa4b8d1c1752186baf59" title="appserver.presentation.trips\l_current.TripsCurrentResource.get" alt="" coords="267,201,489,243"/><area shape="rect" id="node8" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#a388674590d285548b83a14b5f365dc52" title="appserver.presentation.user.\lUserResource.get" alt="" coords="285,267,471,308"/><area shape="rect" id="node10" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a36f7bc60621787d55e87cdf2b679857c" title="appserver.remotes.sharedserver.\lSharedServerRemote.get" alt="" coords="271,332,485,373"/><area shape="rect" id="node3" href="classappserver_1_1configuration_1_1ini_1_1IniFile.html#a146337e577f8b53fa947860d66953d52" title="appserver.configuration.ini.\lIniFile.has" alt="" coords="557,5,736,47"/><area shape="rect" id="node5" href="namespaceappserver_1_1presentation_1_1drivers.html#af8c68a9120b40a87e07a15fedc0f4920" title="appserver.presentation.drivers.get\lOrDefault" alt="" coords="537,71,756,112"/><area shape="rect" id="node9" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#afd674956901f2ca676f4f19459a1f023" title="appserver.presentation.user.\lUserResource._get" alt="" coords="553,267,740,308"/><area shape="rect" id="node11" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="540,332,753,373"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acc2fd401bb110d2fc345b02dff20c85a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.insertCar </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ssUserId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00119">119</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_acc2fd401bb110d2fc345b02dff20c85a_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_acc2fd401bb110d2fc345b02dff20c85a_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_acc2fd401bb110d2fc345b02dff20c85a_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_acc2fd401bb110d2fc345b02dff20c85a_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1presentation_1_1admin_1_1AdminResource.html#a6ab0a2cb437c795902d271282c035106" title="appserver.presentation.admin.\lAdminResource.post" alt="" coords="300,5,497,47"/><area shape="rect" id="node3" href="classappserver_1_1presentation_1_1notifications_1_1NotificationsResource.html#a96271b9736332dd4793a40a835a23bb5" title="appserver.presentation.notifications.\lNotificationsResource.post" alt="" coords="283,71,515,112"/><area shape="rect" id="node4" href="classappserver_1_1presentation_1_1notificationstoken_1_1NotificationsTokenResource.html#af320336515c69bf824c201777b1280f5" title="appserver.presentation.notificationstoken.\lNotificationsTokenResource.post" alt="" coords="267,136,531,177"/><area shape="rect" id="node5" href="classappserver_1_1presentation_1_1position_1_1PositionResource.html#a49073c40a8aade7eef74fd884dc33542" title="appserver.presentation.position.\lPositionResource.post" alt="" coords="295,201,502,243"/><area shape="rect" id="node6" href="classappserver_1_1presentation_1_1token_1_1TokenResource.html#a194f121de42fdad82c9068532923f2e5" title="appserver.presentation.token.\lTokenResource.post" alt="" coords="301,267,496,308"/><area shape="rect" id="node7" href="classappserver_1_1presentation_1_1trips_1_1TripsResource.html#a7d224c430da5af94d970d7d37eabaa35" title="appserver.presentation.trips.\lTripsResource.post" alt="" coords="305,332,492,373"/><area shape="rect" id="node8" href="classappserver_1_1presentation_1_1trips__current_1_1TripsCurrentResource.html#afa82a0ec3c6048ce2a6ee471cab39a16" title="appserver.presentation.trips\l_current.TripsCurrentResource.post" alt="" coords="283,397,514,439"/><area shape="rect" id="node9" href="classappserver_1_1presentation_1_1trips__estimate_1_1TripsEstimateResource.html#a8525771bd3b7fadab0b76cd75f60e5b1" title="appserver.presentation.trips\l_estimate.TripsEstimateResource.post" alt="" coords="274,463,523,504"/><area shape="rect" id="node10" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#a3448dd623a502655762d39cc883fa6d4" title="appserver.presentation.user.\lUserResource.post" alt="" coords="305,528,492,569"/><area shape="rect" id="node12" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a95dde45926157018a9960f24c771ea41" title="appserver.remotes.sharedserver.\lSharedServerRemote.post" alt="" coords="292,593,505,635"/><area shape="rect" id="node11" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#afd674956901f2ca676f4f19459a1f023" title="appserver.presentation.user.\lUserResource._get" alt="" coords="592,528,779,569"/><area shape="rect" id="node13" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="579,593,792,635"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a81af310ebf4f864dab172cd6b403f6ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.insertFacebookUser </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00093">93</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a81af310ebf4f864dab172cd6b403f6ac_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a81af310ebf4f864dab172cd6b403f6ac_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a81af310ebf4f864dab172cd6b403f6ac_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a81af310ebf4f864dab172cd6b403f6ac_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1presentation_1_1admin_1_1AdminResource.html#a6ab0a2cb437c795902d271282c035106" title="appserver.presentation.admin.\lAdminResource.post" alt="" coords="355,5,552,47"/><area shape="rect" id="node3" href="classappserver_1_1presentation_1_1notifications_1_1NotificationsResource.html#a96271b9736332dd4793a40a835a23bb5" title="appserver.presentation.notifications.\lNotificationsResource.post" alt="" coords="337,71,569,112"/><area shape="rect" id="node4" href="classappserver_1_1presentation_1_1notificationstoken_1_1NotificationsTokenResource.html#af320336515c69bf824c201777b1280f5" title="appserver.presentation.notificationstoken.\lNotificationsTokenResource.post" alt="" coords="321,136,585,177"/><area shape="rect" id="node5" href="classappserver_1_1presentation_1_1position_1_1PositionResource.html#a49073c40a8aade7eef74fd884dc33542" title="appserver.presentation.position.\lPositionResource.post" alt="" coords="350,201,557,243"/><area shape="rect" id="node6" href="classappserver_1_1presentation_1_1token_1_1TokenResource.html#a194f121de42fdad82c9068532923f2e5" title="appserver.presentation.token.\lTokenResource.post" alt="" coords="356,267,551,308"/><area shape="rect" id="node7" href="classappserver_1_1presentation_1_1trips_1_1TripsResource.html#a7d224c430da5af94d970d7d37eabaa35" title="appserver.presentation.trips.\lTripsResource.post" alt="" coords="360,332,547,373"/><area shape="rect" id="node8" href="classappserver_1_1presentation_1_1trips__current_1_1TripsCurrentResource.html#afa82a0ec3c6048ce2a6ee471cab39a16" title="appserver.presentation.trips\l_current.TripsCurrentResource.post" alt="" coords="338,397,569,439"/><area shape="rect" id="node9" href="classappserver_1_1presentation_1_1trips__estimate_1_1TripsEstimateResource.html#a8525771bd3b7fadab0b76cd75f60e5b1" title="appserver.presentation.trips\l_estimate.TripsEstimateResource.post" alt="" coords="329,463,578,504"/><area shape="rect" id="node10" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#a3448dd623a502655762d39cc883fa6d4" title="appserver.presentation.user.\lUserResource.post" alt="" coords="360,528,547,569"/><area shape="rect" id="node12" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a95dde45926157018a9960f24c771ea41" title="appserver.remotes.sharedserver.\lSharedServerRemote.post" alt="" coords="347,593,560,635"/><area shape="rect" id="node11" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#afd674956901f2ca676f4f19459a1f023" title="appserver.presentation.user.\lUserResource._get" alt="" coords="647,528,833,569"/><area shape="rect" id="node13" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="633,593,847,635"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab64b673665a2446e53feea7df2f43788"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.insertTrip </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00137">137</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ab64b673665a2446e53feea7df2f43788_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ab64b673665a2446e53feea7df2f43788_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ab64b673665a2446e53feea7df2f43788_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ab64b673665a2446e53feea7df2f43788_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1presentation_1_1admin_1_1AdminResource.html#a6ab0a2cb437c795902d271282c035106" title="appserver.presentation.admin.\lAdminResource.post" alt="" coords="300,5,497,47"/><area shape="rect" id="node3" href="classappserver_1_1presentation_1_1notifications_1_1NotificationsResource.html#a96271b9736332dd4793a40a835a23bb5" title="appserver.presentation.notifications.\lNotificationsResource.post" alt="" coords="283,71,515,112"/><area shape="rect" id="node4" href="classappserver_1_1presentation_1_1notificationstoken_1_1NotificationsTokenResource.html#af320336515c69bf824c201777b1280f5" title="appserver.presentation.notificationstoken.\lNotificationsTokenResource.post" alt="" coords="267,136,531,177"/><area shape="rect" id="node5" href="classappserver_1_1presentation_1_1position_1_1PositionResource.html#a49073c40a8aade7eef74fd884dc33542" title="appserver.presentation.position.\lPositionResource.post" alt="" coords="295,201,502,243"/><area shape="rect" id="node6" href="classappserver_1_1presentation_1_1token_1_1TokenResource.html#a194f121de42fdad82c9068532923f2e5" title="appserver.presentation.token.\lTokenResource.post" alt="" coords="301,267,496,308"/><area shape="rect" id="node7" href="classappserver_1_1presentation_1_1trips_1_1TripsResource.html#a7d224c430da5af94d970d7d37eabaa35" title="appserver.presentation.trips.\lTripsResource.post" alt="" coords="305,332,492,373"/><area shape="rect" id="node8" href="classappserver_1_1presentation_1_1trips__current_1_1TripsCurrentResource.html#afa82a0ec3c6048ce2a6ee471cab39a16" title="appserver.presentation.trips\l_current.TripsCurrentResource.post" alt="" coords="283,397,514,439"/><area shape="rect" id="node9" href="classappserver_1_1presentation_1_1trips__estimate_1_1TripsEstimateResource.html#a8525771bd3b7fadab0b76cd75f60e5b1" title="appserver.presentation.trips\l_estimate.TripsEstimateResource.post" alt="" coords="274,463,523,504"/><area shape="rect" id="node10" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#a3448dd623a502655762d39cc883fa6d4" title="appserver.presentation.user.\lUserResource.post" alt="" coords="305,528,492,569"/><area shape="rect" id="node12" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a95dde45926157018a9960f24c771ea41" title="appserver.remotes.sharedserver.\lSharedServerRemote.post" alt="" coords="292,593,505,635"/><area shape="rect" id="node11" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#afd674956901f2ca676f4f19459a1f023" title="appserver.presentation.user.\lUserResource._get" alt="" coords="592,528,779,569"/><area shape="rect" id="node13" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="579,593,792,635"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c363b163f22275b2a60633b90f9411a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.insertUser </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00081">81</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a4c363b163f22275b2a60633b90f9411a_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a4c363b163f22275b2a60633b90f9411a_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a4c363b163f22275b2a60633b90f9411a_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a4c363b163f22275b2a60633b90f9411a_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1presentation_1_1admin_1_1AdminResource.html#a6ab0a2cb437c795902d271282c035106" title="appserver.presentation.admin.\lAdminResource.post" alt="" coords="300,5,497,47"/><area shape="rect" id="node3" href="classappserver_1_1presentation_1_1notifications_1_1NotificationsResource.html#a96271b9736332dd4793a40a835a23bb5" title="appserver.presentation.notifications.\lNotificationsResource.post" alt="" coords="283,71,515,112"/><area shape="rect" id="node4" href="classappserver_1_1presentation_1_1notificationstoken_1_1NotificationsTokenResource.html#af320336515c69bf824c201777b1280f5" title="appserver.presentation.notificationstoken.\lNotificationsTokenResource.post" alt="" coords="267,136,531,177"/><area shape="rect" id="node5" href="classappserver_1_1presentation_1_1position_1_1PositionResource.html#a49073c40a8aade7eef74fd884dc33542" title="appserver.presentation.position.\lPositionResource.post" alt="" coords="295,201,502,243"/><area shape="rect" id="node6" href="classappserver_1_1presentation_1_1token_1_1TokenResource.html#a194f121de42fdad82c9068532923f2e5" title="appserver.presentation.token.\lTokenResource.post" alt="" coords="301,267,496,308"/><area shape="rect" id="node7" href="classappserver_1_1presentation_1_1trips_1_1TripsResource.html#a7d224c430da5af94d970d7d37eabaa35" title="appserver.presentation.trips.\lTripsResource.post" alt="" coords="305,332,492,373"/><area shape="rect" id="node8" href="classappserver_1_1presentation_1_1trips__current_1_1TripsCurrentResource.html#afa82a0ec3c6048ce2a6ee471cab39a16" title="appserver.presentation.trips\l_current.TripsCurrentResource.post" alt="" coords="283,397,514,439"/><area shape="rect" id="node9" href="classappserver_1_1presentation_1_1trips__estimate_1_1TripsEstimateResource.html#a8525771bd3b7fadab0b76cd75f60e5b1" title="appserver.presentation.trips\l_estimate.TripsEstimateResource.post" alt="" coords="274,463,523,504"/><area shape="rect" id="node10" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#a3448dd623a502655762d39cc883fa6d4" title="appserver.presentation.user.\lUserResource.post" alt="" coords="305,528,492,569"/><area shape="rect" id="node12" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a95dde45926157018a9960f24c771ea41" title="appserver.remotes.sharedserver.\lSharedServerRemote.post" alt="" coords="292,593,505,635"/><area shape="rect" id="node11" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#afd674956901f2ca676f4f19459a1f023" title="appserver.presentation.user.\lUserResource._get" alt="" coords="592,528,779,569"/><area shape="rect" id="node13" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="579,593,792,635"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a95dde45926157018a9960f24c771ea41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.post </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00073">73</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a95dde45926157018a9960f24c771ea41_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a95dde45926157018a9960f24c771ea41_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a95dde45926157018a9960f24c771ea41_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a95dde45926157018a9960f24c771ea41_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="267,5,480,47"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a95dde45926157018a9960f24c771ea41_icgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a95dde45926157018a9960f24c771ea41_icgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a95dde45926157018a9960f24c771ea41_icgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a95dde45926157018a9960f24c771ea41_icgraph">
+<area shape="rect" id="node2" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a4c363b163f22275b2a60633b90f9411a" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertUser" alt="" coords="294,5,507,47"/><area shape="rect" id="node3" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a81af310ebf4f864dab172cd6b403f6ac" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertFacebookUser" alt="" coords="267,71,535,112"/><area shape="rect" id="node4" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a0d8ea9da2c9be1ab03fda6a7a374c7ad" title="appserver.remotes.sharedserver.\lSharedServerRemote.validateUser" alt="" coords="289,136,513,177"/><area shape="rect" id="node5" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#acc2fd401bb110d2fc345b02dff20c85a" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertCar" alt="" coords="294,201,507,243"/><area shape="rect" id="node6" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ae1ba75b5d658968e610683f1e40d1592" title="appserver.remotes.sharedserver.\lSharedServerRemote.estimateTrip" alt="" coords="289,267,512,308"/><area shape="rect" id="node7" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ab64b673665a2446e53feea7df2f43788" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertTrip" alt="" coords="294,332,507,373"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a22ba44a09f48c76558dcfbe54d10534a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.put </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00077">77</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a22ba44a09f48c76558dcfbe54d10534a_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a22ba44a09f48c76558dcfbe54d10534a_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a22ba44a09f48c76558dcfbe54d10534a_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a22ba44a09f48c76558dcfbe54d10534a_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="267,5,480,47"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a22ba44a09f48c76558dcfbe54d10534a_icgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a22ba44a09f48c76558dcfbe54d10534a_icgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a22ba44a09f48c76558dcfbe54d10534a_icgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a22ba44a09f48c76558dcfbe54d10534a_icgraph">
+<area shape="rect" id="node2" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a7bed9e55d191507792f985a8621ac7ef" title="appserver.remotes.sharedserver.\lSharedServerRemote.updateUser" alt="" coords="267,5,485,47"/><area shape="rect" id="node3" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ad7463c2a1cecc9e1eb960418e723a73d" title="appserver.remotes.sharedserver.\lSharedServerRemote.updateCar" alt="" coords="269,71,483,112"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adf15d60be7f5f9b076b9a86dc0ff1181"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.request </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>method</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00059">59</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_adf15d60be7f5f9b076b9a86dc0ff1181_icgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_adf15d60be7f5f9b076b9a86dc0ff1181_icgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_adf15d60be7f5f9b076b9a86dc0ff1181_icgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_adf15d60be7f5f9b076b9a86dc0ff1181_icgraph">
+<area shape="rect" id="node2" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a36f7bc60621787d55e87cdf2b679857c" title="appserver.remotes.sharedserver.\lSharedServerRemote.get" alt="" coords="267,71,480,112"/><area shape="rect" id="node5" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a95dde45926157018a9960f24c771ea41" title="appserver.remotes.sharedserver.\lSharedServerRemote.post" alt="" coords="267,300,480,341"/><area shape="rect" id="node12" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a22ba44a09f48c76558dcfbe54d10534a" title="appserver.remotes.sharedserver.\lSharedServerRemote.put" alt="" coords="267,528,480,569"/><area shape="rect" id="node3" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#af1e4cb0e75847e983918760c81a6d3e5" title="appserver.remotes.sharedserver.\lSharedServerRemote.getUser" alt="" coords="555,5,769,47"/><area shape="rect" id="node4" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a6497915bc283df38b03af617bab98f86" title="appserver.remotes.sharedserver.\lSharedServerRemote.getCars" alt="" coords="555,71,769,112"/><area shape="rect" id="node6" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a4c363b163f22275b2a60633b90f9411a" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertUser" alt="" coords="555,136,769,177"/><area shape="rect" id="node7" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a81af310ebf4f864dab172cd6b403f6ac" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertFacebookUser" alt="" coords="528,201,796,243"/><area shape="rect" id="node8" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a0d8ea9da2c9be1ab03fda6a7a374c7ad" title="appserver.remotes.sharedserver.\lSharedServerRemote.validateUser" alt="" coords="550,267,774,308"/><area shape="rect" id="node9" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#acc2fd401bb110d2fc345b02dff20c85a" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertCar" alt="" coords="555,332,769,373"/><area shape="rect" id="node10" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ae1ba75b5d658968e610683f1e40d1592" title="appserver.remotes.sharedserver.\lSharedServerRemote.estimateTrip" alt="" coords="551,397,773,439"/><area shape="rect" id="node11" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ab64b673665a2446e53feea7df2f43788" title="appserver.remotes.sharedserver.\lSharedServerRemote.insertTrip" alt="" coords="555,463,769,504"/><area shape="rect" id="node13" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a7bed9e55d191507792f985a8621ac7ef" title="appserver.remotes.sharedserver.\lSharedServerRemote.updateUser" alt="" coords="553,528,771,569"/><area shape="rect" id="node14" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#ad7463c2a1cecc9e1eb960418e723a73d" title="appserver.remotes.sharedserver.\lSharedServerRemote.updateCar" alt="" coords="555,593,769,635"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7463c2a1cecc9e1eb960418e723a73d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.updateCar </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ssUserId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00124">124</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ad7463c2a1cecc9e1eb960418e723a73d_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ad7463c2a1cecc9e1eb960418e723a73d_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ad7463c2a1cecc9e1eb960418e723a73d_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_ad7463c2a1cecc9e1eb960418e723a73d_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a22ba44a09f48c76558dcfbe54d10534a" title="appserver.remotes.sharedserver.\lSharedServerRemote.put" alt="" coords="267,5,480,47"/><area shape="rect" id="node3" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="528,5,741,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bed9e55d191507792f985a8621ac7ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.updateUser </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ssId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00111">111</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a7bed9e55d191507792f985a8621ac7ef_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a7bed9e55d191507792f985a8621ac7ef_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a7bed9e55d191507792f985a8621ac7ef_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a7bed9e55d191507792f985a8621ac7ef_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a22ba44a09f48c76558dcfbe54d10534a" title="appserver.remotes.sharedserver.\lSharedServerRemote.put" alt="" coords="272,5,485,47"/><area shape="rect" id="node3" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="533,5,747,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d8ea9da2c9be1ab03fda6a7a374c7ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def appserver.remotes.sharedserver.SharedServerRemote.validateUser </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00107">107</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a0d8ea9da2c9be1ab03fda6a7a374c7ad_cgraph.png" border="0" usemap="#classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a0d8ea9da2c9be1ab03fda6a7a374c7ad_cgraph" alt=""/></div>
+<map name="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a0d8ea9da2c9be1ab03fda6a7a374c7ad_cgraph" id="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote_a0d8ea9da2c9be1ab03fda6a7a374c7ad_cgraph">
+<area shape="rect" id="node2" href="classappserver_1_1presentation_1_1admin_1_1AdminResource.html#a6ab0a2cb437c795902d271282c035106" title="appserver.presentation.admin.\lAdminResource.post" alt="" coords="311,5,508,47"/><area shape="rect" id="node3" href="classappserver_1_1presentation_1_1notifications_1_1NotificationsResource.html#a96271b9736332dd4793a40a835a23bb5" title="appserver.presentation.notifications.\lNotificationsResource.post" alt="" coords="293,71,525,112"/><area shape="rect" id="node4" href="classappserver_1_1presentation_1_1notificationstoken_1_1NotificationsTokenResource.html#af320336515c69bf824c201777b1280f5" title="appserver.presentation.notificationstoken.\lNotificationsTokenResource.post" alt="" coords="277,136,541,177"/><area shape="rect" id="node5" href="classappserver_1_1presentation_1_1position_1_1PositionResource.html#a49073c40a8aade7eef74fd884dc33542" title="appserver.presentation.position.\lPositionResource.post" alt="" coords="306,201,513,243"/><area shape="rect" id="node6" href="classappserver_1_1presentation_1_1token_1_1TokenResource.html#a194f121de42fdad82c9068532923f2e5" title="appserver.presentation.token.\lTokenResource.post" alt="" coords="312,267,507,308"/><area shape="rect" id="node7" href="classappserver_1_1presentation_1_1trips_1_1TripsResource.html#a7d224c430da5af94d970d7d37eabaa35" title="appserver.presentation.trips.\lTripsResource.post" alt="" coords="316,332,503,373"/><area shape="rect" id="node8" href="classappserver_1_1presentation_1_1trips__current_1_1TripsCurrentResource.html#afa82a0ec3c6048ce2a6ee471cab39a16" title="appserver.presentation.trips\l_current.TripsCurrentResource.post" alt="" coords="294,397,525,439"/><area shape="rect" id="node9" href="classappserver_1_1presentation_1_1trips__estimate_1_1TripsEstimateResource.html#a8525771bd3b7fadab0b76cd75f60e5b1" title="appserver.presentation.trips\l_estimate.TripsEstimateResource.post" alt="" coords="285,463,534,504"/><area shape="rect" id="node10" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#a3448dd623a502655762d39cc883fa6d4" title="appserver.presentation.user.\lUserResource.post" alt="" coords="316,528,503,569"/><area shape="rect" id="node12" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a95dde45926157018a9960f24c771ea41" title="appserver.remotes.sharedserver.\lSharedServerRemote.post" alt="" coords="303,593,516,635"/><area shape="rect" id="node11" href="classappserver_1_1presentation_1_1user_1_1UserResource.html#afd674956901f2ca676f4f19459a1f023" title="appserver.presentation.user.\lUserResource._get" alt="" coords="603,528,789,569"/><area shape="rect" id="node13" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="589,593,803,635"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a14503a2bfc1286b929f9c0de6078c11e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">appserver.remotes.sharedserver.SharedServerRemote.headers</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="sharedserver_8py_source.html#l00057">57</a> del archivo <a class="el" href="sharedserver_8py_source.html">sharedserver.py</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>src/appserver/remotes/<a class="el" href="sharedserver_8py_source.html">sharedserver.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceappserver.html">appserver</a></li><li class="navelem"><a class="el" href="namespaceappserver_1_1remotes.html">remotes</a></li><li class="navelem"><a class="el" href="namespaceappserver_1_1remotes_1_1sharedserver.html">sharedserver</a></li><li class="navelem"><a class="el" href="classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html">SharedServerRemote</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
+</body>
+</html>

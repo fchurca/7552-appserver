@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>PyAppServer: Fichero Fuente src/appserver/persistence/mongodb/user.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">PyAppServer
+   </div>
+   <div id="projectbrief">Application Server en Python para Taller de Prog 2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('persistence_2mongodb_2user_8py_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">user.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="persistence_2mongodb_2user_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceappserver_1_1persistence_1_1mongodb_1_1user.html">    1</a></span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1persistence_1_1mongodb.html">appserver.persistence.mongodb</a> <span class="keyword">import</span> MONGO_CONFIG</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1applog.html">appserver.applog</a> <span class="keyword">import</span> LoggerFactory</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="namespaceappserver_1_1persistence_1_1mongodb_1_1user.html#a6bfe55504087c520d536792e7df8365b">    4</a></span>&#160;logger = <a class="code" href="classappserver_1_1applog_1_1LoggerFactory.html">LoggerFactory</a>().getLogger(<span class="stringliteral">&#39;UserRepository&#39;</span>)</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespaceappserver_1_1persistence_1_1mongodb_1_1user.html#a196e51ae6de460352f3cb32c9f62c315">    5</a></span>&#160;cn = MONGO_CONFIG.get_connection()</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespaceappserver_1_1persistence_1_1mongodb_1_1user.html#acec44ea23e3492e188603161129eaff7">    6</a></span>&#160;db = MONGO_CONFIG.get_database_from(cn)</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespaceappserver_1_1persistence_1_1mongodb_1_1user.html#a0b15069fc17ab8001aefe809334434c2">    7</a></span>&#160;collection=db.users</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html">UserRepository</a>(object):</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a0c7b86bcc450cdec49e38439a05e7e03">   10</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a0c7b86bcc450cdec49e38439a05e7e03">__init__</a>(self):</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a4525b84cedb317c870fcad7366ff4d78">   11</a></span>&#160;        self.<a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a4525b84cedb317c870fcad7366ff4d78">collection</a> = collection</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#ad0b8caa76001b27a0bf82a54123aafd7">   12</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#ad0b8caa76001b27a0bf82a54123aafd7">insert</a>(self, user):</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        logger.info(<span class="stringliteral">&#39;insert&#39;</span>)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        user_id = collection.insert_one(user)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span> <span class="keywordflow">if</span> user_id == <span class="keywordtype">None</span> <span class="keywordflow">else</span> str(user_id)</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#ae360dd45dc49fee5faf541898eb21d96">   16</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#ae360dd45dc49fee5faf541898eb21d96">update</a>(self, username, payload):</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        logger.info(<span class="stringliteral">&#39;update&#39;</span>)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> collection.update_one({<span class="stringliteral">&#39;username&#39;</span>: username}, {<span class="stringliteral">&#39;$set&#39;</span>:payload})</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a239d6d48f368c7b4e03b36c31ea187c1">   19</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a239d6d48f368c7b4e03b36c31ea187c1">update_ssId</a>(self, ssId, payload):</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        logger.info(<span class="stringliteral">&#39;update_ssId&#39;</span>)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> collection.update_one({<span class="stringliteral">&#39;ssId&#39;</span>: ssId}, {<span class="stringliteral">&#39;$set&#39;</span>:payload})</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a60e9810853841684f226c5d340beda5c">   22</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a60e9810853841684f226c5d340beda5c">find</a>(self, filter = {}, projection={}):</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        logger.info(<span class="stringliteral">&#39;find&#39;</span>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        projection[<span class="stringliteral">&#39;_id&#39;</span>] = <span class="keyword">False</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        projection[<span class="stringliteral">&#39;password&#39;</span>] = <span class="keyword">False</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        projection[<span class="stringliteral">&#39;token&#39;</span>] = <span class="keyword">False</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> collection.find(filter, projection)</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a5c121740643e2d6d31c06632ef45ec01">   28</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a5c121740643e2d6d31c06632ef45ec01">find_one</a>(self, username, projection={}):</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        logger.info(<span class="stringliteral">&#39;find_one&#39;</span>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        logger.debug(username)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        projection[<span class="stringliteral">&#39;_id&#39;</span>] = <span class="keyword">False</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> collection.find_one({<span class="stringliteral">&#39;username&#39;</span>: username}, projection)</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a56ed07623739e2665181b2355278c488">   33</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a56ed07623739e2665181b2355278c488">find_one_ssId</a>(self, ssId, projection={}):</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        logger.info(<span class="stringliteral">&#39;find_one_ssId&#39;</span>)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        logger.debug(ssId)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        projection[<span class="stringliteral">&#39;_id&#39;</span>] = <span class="keyword">False</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> collection.find_one({<span class="stringliteral">&#39;ssId&#39;</span>: ssId}, projection)</div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository_html_ad0b8caa76001b27a0bf82a54123aafd7"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#ad0b8caa76001b27a0bf82a54123aafd7">appserver.persistence.mongodb.user.UserRepository.insert</a></div><div class="ttdeci">def insert</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2user_8py_source.html#l00012">user.py:12</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository_html_a239d6d48f368c7b4e03b36c31ea187c1"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a239d6d48f368c7b4e03b36c31ea187c1">appserver.persistence.mongodb.user.UserRepository.update_ssId</a></div><div class="ttdeci">def update_ssId</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2user_8py_source.html#l00019">user.py:19</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1applog_html"><div class="ttname"><a href="namespaceappserver_1_1applog.html">appserver.applog</a></div><div class="ttdoc">Define clases y utilidades para estandarizar el proceso de logging. </div><div class="ttdef"><b>Definition:</b> <a href="applog_2____init_____8py_source.html#l00001">__init__.py:1</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository_html_a5c121740643e2d6d31c06632ef45ec01"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a5c121740643e2d6d31c06632ef45ec01">appserver.persistence.mongodb.user.UserRepository.find_one</a></div><div class="ttdeci">def find_one</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2user_8py_source.html#l00028">user.py:28</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository_html_ae360dd45dc49fee5faf541898eb21d96"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#ae360dd45dc49fee5faf541898eb21d96">appserver.persistence.mongodb.user.UserRepository.update</a></div><div class="ttdeci">def update</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2user_8py_source.html#l00016">user.py:16</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository_html_a60e9810853841684f226c5d340beda5c"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a60e9810853841684f226c5d340beda5c">appserver.persistence.mongodb.user.UserRepository.find</a></div><div class="ttdeci">def find</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2user_8py_source.html#l00022">user.py:22</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository_html_a56ed07623739e2665181b2355278c488"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a56ed07623739e2665181b2355278c488">appserver.persistence.mongodb.user.UserRepository.find_one_ssId</a></div><div class="ttdeci">def find_one_ssId</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2user_8py_source.html#l00033">user.py:33</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository_html"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html">appserver.persistence.mongodb.user.UserRepository</a></div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2user_8py_source.html#l00009">user.py:9</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository_html_a4525b84cedb317c870fcad7366ff4d78"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a4525b84cedb317c870fcad7366ff4d78">appserver.persistence.mongodb.user.UserRepository.collection</a></div><div class="ttdeci">collection</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2user_8py_source.html#l00011">user.py:11</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository_html_a0c7b86bcc450cdec49e38439a05e7e03"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1user_1_1UserRepository.html#a0c7b86bcc450cdec49e38439a05e7e03">appserver.persistence.mongodb.user.UserRepository.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2user_8py_source.html#l00010">user.py:10</a></div></div>
+<div class="ttc" id="classappserver_1_1applog_1_1LoggerFactory_html"><div class="ttname"><a href="classappserver_1_1applog_1_1LoggerFactory.html">appserver.applog.LoggerFactory</a></div><div class="ttdoc">Clase encargada de administrar la instanciación y configuración de los objetos Logger a ser utilizado...</div><div class="ttdef"><b>Definition:</b> <a href="applog_2____init_____8py_source.html#l00013">__init__.py:13</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1persistence_1_1mongodb_html"><div class="ttname"><a href="namespaceappserver_1_1persistence_1_1mongodb.html">appserver.persistence.mongodb</a></div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00001">__init__.py:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb0be9690a8d57d9d2060c47e965ec5.html">appserver</a></li><li class="navelem"><a class="el" href="dir_5834a8813fc0b0ab694cd1bfebfd3b81.html">persistence</a></li><li class="navelem"><a class="el" href="dir_d18b9879c74a3bef7623f2b4a0fc0de2.html">mongodb</a></li><li class="navelem"><a class="el" href="persistence_2mongodb_2user_8py.html">user.py</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
+</body>
+</html>

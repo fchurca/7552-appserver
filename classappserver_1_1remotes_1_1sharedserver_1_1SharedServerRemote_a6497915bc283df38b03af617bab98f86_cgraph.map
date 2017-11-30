@@ -1,0 +1,12 @@
+<map id="appserver.remotes.sharedserver.SharedServerRemote.getCars" name="appserver.remotes.sharedserver.SharedServerRemote.getCars">
+<area shape="rect" id="node2" href="$classappserver_1_1configuration_1_1ini_1_1IniFile.html#a5c047d73714a5c3048196ccf614f2e79" title="appserver.configuration.ini.\lIniFile.get" alt="" coords="289,5,467,47"/>
+<area shape="rect" id="node4" href="$classappserver_1_1presentation_1_1drivers_1_1DriversResource.html#a877634edce254a05bfe16af8159da6b3" title="appserver.presentation.drivers.\lDriversResource.get" alt="" coords="277,71,479,112"/>
+<area shape="rect" id="node6" href="$classappserver_1_1presentation_1_1trips_1_1TripsResource.html#a8e42ba1bba4fa6bb62b7204f9f8e1115" title="appserver.presentation.trips.\lTripsResource.get" alt="" coords="285,136,471,177"/>
+<area shape="rect" id="node7" href="$classappserver_1_1presentation_1_1trips__current_1_1TripsCurrentResource.html#aad8c972c263ffa4b8d1c1752186baf59" title="appserver.presentation.trips\l_current.TripsCurrentResource.get" alt="" coords="267,201,489,243"/>
+<area shape="rect" id="node8" href="$classappserver_1_1presentation_1_1user_1_1UserResource.html#a388674590d285548b83a14b5f365dc52" title="appserver.presentation.user.\lUserResource.get" alt="" coords="285,267,471,308"/>
+<area shape="rect" id="node10" href="$classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#a36f7bc60621787d55e87cdf2b679857c" title="appserver.remotes.sharedserver.\lSharedServerRemote.get" alt="" coords="271,332,485,373"/>
+<area shape="rect" id="node3" href="$classappserver_1_1configuration_1_1ini_1_1IniFile.html#a146337e577f8b53fa947860d66953d52" title="appserver.configuration.ini.\lIniFile.has" alt="" coords="557,5,736,47"/>
+<area shape="rect" id="node5" href="$namespaceappserver_1_1presentation_1_1drivers.html#af8c68a9120b40a87e07a15fedc0f4920" title="appserver.presentation.drivers.get\lOrDefault" alt="" coords="537,71,756,112"/>
+<area shape="rect" id="node9" href="$classappserver_1_1presentation_1_1user_1_1UserResource.html#afd674956901f2ca676f4f19459a1f023" title="appserver.presentation.user.\lUserResource._get" alt="" coords="553,267,740,308"/>
+<area shape="rect" id="node11" href="$classappserver_1_1remotes_1_1sharedserver_1_1SharedServerRemote.html#adf15d60be7f5f9b076b9a86dc0ff1181" title="appserver.remotes.sharedserver.\lSharedServerRemote.request" alt="" coords="540,332,753,373"/>
+</map>

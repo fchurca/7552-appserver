@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>PyAppServer: Fichero Fuente src/appserver/persistence/mongodb/__init__.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">PyAppServer
+   </div>
+   <div id="projectbrief">Application Server en Python para Taller de Prog 2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('persistence_2mongodb_2____init_____8py_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">__init__.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="persistence_2mongodb_2____init_____8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceappserver_1_1persistence_1_1mongodb.html">    1</a></span>&#160;<span class="keyword">from</span> appserver <span class="keyword">import</span> appconfig</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1configuration_1_1envar.html">appserver.configuration.envar</a> <span class="keyword">import</span> EnvironmentVariable</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> pymongo</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html">_MongoConfig</a>(object):</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a9c713b368a87f9caa4bb47fddeafb9c1">    9</a></span>&#160;    MONGODB_CONFIG = <span class="stringliteral">&#39;mongo.ini&#39;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a48c4713f0856353a2652f4dc634991f2">   11</a></span>&#160;    SECTION_CONNECTION = <span class="stringliteral">&#39;Connection&#39;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a86d50529acb5c4f160ff21d9b77d85e8">   13</a></span>&#160;    KEY_MONGO_VAR = <span class="stringliteral">&#39;mongovar&#39;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#aa11877df15ad2de5c4bac85016d697ae">   14</a></span>&#160;    KEY_MONGO_VAR_DEFAULT = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a350d4f150a42f02fd2a7c54e883d2ab2">   16</a></span>&#160;    KEY_URI = <span class="stringliteral">&#39;uri&#39;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#ad5b7d25a6661d09758b4a6346beeced9">   17</a></span>&#160;    KEY_URI_DEFAULT = <span class="stringliteral">&#39;mongodb://localhost:27017&#39;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a6692ca442c235c49b0cb70b0d85235e9">   19</a></span>&#160;    KEY_DB_NAME = <span class="stringliteral">&#39;db&#39;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a458b9478822aa568969e001a7d3c98a8">   20</a></span>&#160;    KEY_DB_NAME_DEFAULT = <span class="stringliteral">&#39;db&#39;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a47a67c8fc1ac1d192533ea3664073548">   22</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a47a67c8fc1ac1d192533ea3664073548">__init__</a>(self):</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        config = appconfig.APP_CONFIG.get_file(self.<a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a9c713b368a87f9caa4bb47fddeafb9c1">MONGODB_CONFIG</a>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        self.<a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a2378b7393d971a70c85228aa4e9eed13">_database_name</a> = config.get(</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            _MongoConfig.SECTION_CONNECTION,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            _MongoConfig.KEY_DB_NAME,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            _MongoConfig.KEY_DB_NAME_DEFAULT)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        self.<a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#af70ef8771ccdb15452aa429f784f1403">_connection_string</a> = self.<a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#ad734aead3164053c402aa4af03235171">_load_connection_string</a>(config)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">def </span>_load_connection_string(self, config):</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        mongo_var = config.get(</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            _MongoConfig.SECTION_CONNECTION,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            _MongoConfig.KEY_MONGO_VAR,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            _MongoConfig.KEY_MONGO_VAR_DEFAULT)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> mongo_var:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> config.get(</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                _MongoConfig.SECTION_CONNECTION,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                _MongoConfig.KEY_URI,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                _MongoConfig.KEY_URI_DEFAULT)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classappserver_1_1configuration_1_1envar_1_1EnvironmentVariable.html">EnvironmentVariable</a>(mongo_var).get_value()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#acb3f38de6db1b2aa3cdea3400d60e01a">   46</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#acb3f38de6db1b2aa3cdea3400d60e01a">get_connection_string</a>(self):</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#af70ef8771ccdb15452aa429f784f1403">_connection_string</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#aa643296d87c125a1655692cc190c721e">   49</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#aa643296d87c125a1655692cc190c721e">get_database_name</a>(self):</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a2378b7393d971a70c85228aa4e9eed13">_database_name</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a35f7bf0233787d7d0401ba7118d66679">   52</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a35f7bf0233787d7d0401ba7118d66679">get_database_from</a>(self, connection):</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> connection[self.<a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#aa643296d87c125a1655692cc190c721e">get_database_name</a>()]</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a242cea507cfa81bf5462e9f054aab60d">   55</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a242cea507cfa81bf5462e9f054aab60d">get_connection</a>(self):</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> pymongo.MongoClient(self.<a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#acb3f38de6db1b2aa3cdea3400d60e01a">get_connection_string</a>())</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="namespaceappserver_1_1persistence_1_1mongodb.html#a5c832a24cac50977977edd9bb1875593">   58</a></span>&#160;MONGO_CONFIG = <a class="code" href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html">_MongoConfig</a>()</div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig_html_a9c713b368a87f9caa4bb47fddeafb9c1"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a9c713b368a87f9caa4bb47fddeafb9c1">appserver.persistence.mongodb._MongoConfig.MONGODB_CONFIG</a></div><div class="ttdeci">string MONGODB_CONFIG</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00009">__init__.py:9</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1configuration_1_1envar_html"><div class="ttname"><a href="namespaceappserver_1_1configuration_1_1envar.html">appserver.configuration.envar</a></div><div class="ttdef"><b>Definition:</b> <a href="envar_8py_source.html#l00001">envar.py:1</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig_html_af70ef8771ccdb15452aa429f784f1403"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#af70ef8771ccdb15452aa429f784f1403">appserver.persistence.mongodb._MongoConfig._connection_string</a></div><div class="ttdeci">_connection_string</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00030">__init__.py:30</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig_html_aa643296d87c125a1655692cc190c721e"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#aa643296d87c125a1655692cc190c721e">appserver.persistence.mongodb._MongoConfig.get_database_name</a></div><div class="ttdeci">def get_database_name</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00049">__init__.py:49</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig_html_ad734aead3164053c402aa4af03235171"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#ad734aead3164053c402aa4af03235171">appserver.persistence.mongodb._MongoConfig._load_connection_string</a></div><div class="ttdeci">def _load_connection_string</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00032">__init__.py:32</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig_html_a35f7bf0233787d7d0401ba7118d66679"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a35f7bf0233787d7d0401ba7118d66679">appserver.persistence.mongodb._MongoConfig.get_database_from</a></div><div class="ttdeci">def get_database_from</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00052">__init__.py:52</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig_html"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html">appserver.persistence.mongodb._MongoConfig</a></div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00007">__init__.py:7</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig_html_a47a67c8fc1ac1d192533ea3664073548"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a47a67c8fc1ac1d192533ea3664073548">appserver.persistence.mongodb._MongoConfig.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00022">__init__.py:22</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig_html_a2378b7393d971a70c85228aa4e9eed13"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a2378b7393d971a70c85228aa4e9eed13">appserver.persistence.mongodb._MongoConfig._database_name</a></div><div class="ttdeci">_database_name</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00025">__init__.py:25</a></div></div>
+<div class="ttc" id="classappserver_1_1configuration_1_1envar_1_1EnvironmentVariable_html"><div class="ttname"><a href="classappserver_1_1configuration_1_1envar_1_1EnvironmentVariable.html">appserver.configuration.envar.EnvironmentVariable</a></div><div class="ttdef"><b>Definition:</b> <a href="envar_8py_source.html#l00003">envar.py:3</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig_html_a242cea507cfa81bf5462e9f054aab60d"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#a242cea507cfa81bf5462e9f054aab60d">appserver.persistence.mongodb._MongoConfig.get_connection</a></div><div class="ttdeci">def get_connection</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00055">__init__.py:55</a></div></div>
+<div class="ttc" id="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig_html_acb3f38de6db1b2aa3cdea3400d60e01a"><div class="ttname"><a href="classappserver_1_1persistence_1_1mongodb_1_1__MongoConfig.html#acb3f38de6db1b2aa3cdea3400d60e01a">appserver.persistence.mongodb._MongoConfig.get_connection_string</a></div><div class="ttdeci">def get_connection_string</div><div class="ttdef"><b>Definition:</b> <a href="persistence_2mongodb_2____init_____8py_source.html#l00046">__init__.py:46</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb0be9690a8d57d9d2060c47e965ec5.html">appserver</a></li><li class="navelem"><a class="el" href="dir_5834a8813fc0b0ab694cd1bfebfd3b81.html">persistence</a></li><li class="navelem"><a class="el" href="dir_d18b9879c74a3bef7623f2b4a0fc0de2.html">mongodb</a></li><li class="navelem"><a class="el" href="persistence_2mongodb_2____init_____8py.html">__init__.py</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
+</body>
+</html>

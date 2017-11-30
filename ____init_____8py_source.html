@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>PyAppServer: Fichero Fuente src/appserver/__init__.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">PyAppServer
+   </div>
+   <div id="projectbrief">Application Server en Python para Taller de Prog 2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('____init_____8py_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">__init__.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="____init_____8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceappserver.html">    1</a></span>&#160;<span class="keyword">import</span> flask</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> flask_restful</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1presentation_1_1admin.html">appserver.presentation.admin</a> <span class="keyword">import</span> AdminResource</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1presentation_1_1drivers.html">appserver.presentation.drivers</a> <span class="keyword">import</span> DriversResource</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1presentation_1_1notifications.html">appserver.presentation.notifications</a> <span class="keyword">import</span> NotificationsResource</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1presentation_1_1notificationstoken.html">appserver.presentation.notificationstoken</a> <span class="keyword">import</span> NotificationsTokenResource</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1presentation_1_1position.html">appserver.presentation.position</a> <span class="keyword">import</span> PositionResource</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1presentation_1_1token.html">appserver.presentation.token</a> <span class="keyword">import</span> TokenResource</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1presentation_1_1trips.html">appserver.presentation.trips</a> <span class="keyword">import</span> TripsResource</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1presentation_1_1trips__current.html">appserver.presentation.trips_current</a> <span class="keyword">import</span> TripsCurrentResource</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1presentation_1_1trips__estimate.html">appserver.presentation.trips_estimate</a> <span class="keyword">import</span> TripsEstimateResource</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceappserver_1_1presentation_1_1user.html">appserver.presentation.user</a> <span class="keyword">import</span> UserResource</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespaceappserver.html#addc210da825ea2c818bf96703c95eb9c">   15</a></span>&#160;app = flask.Flask(__name__)</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespaceappserver.html#a04a7904b4bc13d260b0a767579a41b56">   16</a></span>&#160;api = flask_restful.Api(app)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;api.add_resource(AdminResource, <span class="stringliteral">&#39;/admin/&#39;</span>)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;api.add_resource(DriversResource, <span class="stringliteral">&#39;/drivers/&#39;</span>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;api.add_resource(NotificationsResource, <span class="stringliteral">&#39;/notifications/&#39;</span>)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;api.add_resource(NotificationsTokenResource, <span class="stringliteral">&#39;/notifications/token/&#39;</span>)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;api.add_resource(PositionResource, <span class="stringliteral">&#39;/position/&#39;</span>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;api.add_resource(TokenResource, <span class="stringliteral">&#39;/token/&#39;</span>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;api.add_resource(TripsResource, <span class="stringliteral">&#39;/trips/&#39;</span>)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;api.add_resource(TripsCurrentResource, <span class="stringliteral">&#39;/trips/current/&#39;</span>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;api.add_resource(TripsEstimateResource, <span class="stringliteral">&#39;/trips/estimate/&#39;</span>)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;api.add_resource(UserResource, <span class="stringliteral">&#39;/user/&#39;</span>)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="ttc" id="namespaceappserver_1_1presentation_1_1position_html"><div class="ttname"><a href="namespaceappserver_1_1presentation_1_1position.html">appserver.presentation.position</a></div><div class="ttdef"><b>Definition:</b> <a href="position_8py_source.html#l00001">position.py:1</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1presentation_1_1token_html"><div class="ttname"><a href="namespaceappserver_1_1presentation_1_1token.html">appserver.presentation.token</a></div><div class="ttdef"><b>Definition:</b> <a href="token_8py_source.html#l00001">token.py:1</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1presentation_1_1drivers_html"><div class="ttname"><a href="namespaceappserver_1_1presentation_1_1drivers.html">appserver.presentation.drivers</a></div><div class="ttdef"><b>Definition:</b> <a href="drivers_8py_source.html#l00001">drivers.py:1</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1presentation_1_1notifications_html"><div class="ttname"><a href="namespaceappserver_1_1presentation_1_1notifications.html">appserver.presentation.notifications</a></div><div class="ttdef"><b>Definition:</b> <a href="notifications_8py_source.html#l00001">notifications.py:1</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1presentation_1_1user_html"><div class="ttname"><a href="namespaceappserver_1_1presentation_1_1user.html">appserver.presentation.user</a></div><div class="ttdef"><b>Definition:</b> <a href="presentation_2user_8py_source.html#l00001">user.py:1</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1presentation_1_1trips__current_html"><div class="ttname"><a href="namespaceappserver_1_1presentation_1_1trips__current.html">appserver.presentation.trips_current</a></div><div class="ttdef"><b>Definition:</b> <a href="trips__current_8py_source.html#l00001">trips_current.py:1</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1presentation_1_1admin_html"><div class="ttname"><a href="namespaceappserver_1_1presentation_1_1admin.html">appserver.presentation.admin</a></div><div class="ttdef"><b>Definition:</b> <a href="admin_8py_source.html#l00001">admin.py:1</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1presentation_1_1notificationstoken_html"><div class="ttname"><a href="namespaceappserver_1_1presentation_1_1notificationstoken.html">appserver.presentation.notificationstoken</a></div><div class="ttdef"><b>Definition:</b> <a href="notificationstoken_8py_source.html#l00001">notificationstoken.py:1</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1presentation_1_1trips_html"><div class="ttname"><a href="namespaceappserver_1_1presentation_1_1trips.html">appserver.presentation.trips</a></div><div class="ttdef"><b>Definition:</b> <a href="trips_8py_source.html#l00001">trips.py:1</a></div></div>
+<div class="ttc" id="namespaceappserver_1_1presentation_1_1trips__estimate_html"><div class="ttname"><a href="namespaceappserver_1_1presentation_1_1trips__estimate.html">appserver.presentation.trips_estimate</a></div><div class="ttdef"><b>Definition:</b> <a href="trips__estimate_8py_source.html#l00001">trips_estimate.py:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb0be9690a8d57d9d2060c47e965ec5.html">appserver</a></li><li class="navelem"><a class="el" href="____init_____8py.html">__init__.py</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
+</body>
+</html>
