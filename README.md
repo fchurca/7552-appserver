@@ -1,4 +1,5 @@
-# Python Application Server
+# Llevame AppServer
+An application server for Llevame written in Python
 
 * [![Build Status](https://travis-ci.org/fchurca/7552-appserver.svg?branch=master)](https://travis-ci.org/fchurca/7552-appserver)
 * [![Coverage Status](https://coveralls.io/repos/github/fchurca/7552-appserver/badge.svg)](https://coveralls.io/github/fchurca/7552-appserver)|
@@ -8,12 +9,19 @@
 
 * Master repositories
     * Android client: https://github.com/smaraggi/HG-android-client/network
-    * Appserver (this repo): https://github.com/fchurca/7552-appserver
-    * Shared server: https://github.com/florrup/sharedserver
+    * AppServer (this repo): https://github.com/fchurca/7552-appserver
+    * SharedServer: https://github.com/florrup/sharedserver
 
 ## Useful links
 * Subject site: http://7552.fi.uba.ar/
 * Assignment: https://github.com/taller-de-programacion-2/taller-de-programacion-2.github.io/blob/master/trabajo-practico/enunciados/2017/2/llevame.md
+
+## Interfaces
+* An Android client will connect to this server
+* A MongoDB instance for persistence. Means for configuring a development instance are included in this repo.
+* SharedServer for storing user data, final trip data, and all that jazz.
+* Firebase Cloud Messaging for pushing notifications to Android clients.
+* USIG for determining street addresses from user locations inside Buenos Aires City.
 
 ## Dependencies
 For a Docker server on Debian:
@@ -43,10 +51,10 @@ After Mongo is up, run in another terminal:
 
 The script launches the image fiuba/appserver:dev inside a container. The container is configured as follows:
 * Port 8080 of the container is mapped to port 8080 of the host
-* Appserver container is placed inside network `taller`, with name `appserver.taller`
+* AppServer container is placed inside network `taller`, with name `appserver.taller`
 * The project's source code directory in the host is mapped to the directory where gunicorn looks for the application scripts. Since gunicorn is executed with live reload, local live edits to the application code will be instantly reloaded by gunicorn without having to build the image and reload the container once again.
 * MongoDB container is placed inside network `taller`, with name `mongodb.taller`
-* By default, the container will try to contact the Shared Server at `sharedserver.taller`
+* By default, the container will try to contact the SharedServer at `sharedserver.taller`
 More elaborate setups may arise. In that case, refer to the following sections.
 
 ## Deploying to Heroku
@@ -57,13 +65,13 @@ We have found it useful to use pipelines and Github Sync: https://devcenter.hero
 ## Configuration
 The following environment variables need to be set:
 * `APPSERVER_CFG` Location for configuration files, relative to the root of the project.
-* `SHAREDSERVER_URL` Shared Server URL (default, variable name in `$APPSERVER_CFG/sharedserver.ini`)
-* `SHAREDSERVER_TOKEN` Initial Shared Server token
+* `SHAREDSERVER_URL` SharedServer URL (default, variable name in `$APPSERVER_CFG/sharedserver.ini`)
+* `SHAREDSERVER_TOKEN` Initial SharedServer token
 * `MONGODB_URI` MongoDB URI (default, variable name in `$APPSERVER_CFG/mongo.ini`)
 * `FCM_API_KEY` Firebase Cloud Messaging key
 
-### Shared Server
-The variable that defines the URL of the Shared Server instance is defined in `$APPSERVER_CFG/sharedserver.ini`:
+### SharedServer
+The variable that defines the URL of the SharedServer instance is defined in `$APPSERVER_CFG/sharedserver.ini`:
 ```
 [Connection]
 sharedservervar=SHAREDSERVER_URL
@@ -121,6 +129,13 @@ Application server can then be executed using gunicorn:
 pip install gunicorn
 gunicorn --workers 4 appserver:app
 ```
+
+## Future improvements
+In order to make this daemon bulletproof, several improvements can be made. Namely:
+* Use of USIG can be replaced by calls to Google or OpenStreetMap in order to infer street addresses outside of Buenos Aires.
+* A back office module can be implemented, or an administration API to be exposed to the SharedServer backoffice.
+* The position of the passenger is tracked during the trip in order to calculate distance. However, the raw positions as informed by the passenger are used. This can result in unexpectedly high costs if the positions jump around. The datapoints can be smoothed out with LOESS and outlier filtering, either by local variance or by position error. Or with LOWESS weighted by (π/2)-arctan(error). Or something.
+* Even more testing. There's never enough testing.
 
 ## Generating Doxygen Documentation
 ```
